@@ -24,7 +24,21 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index');
 
+
 Route::get('/android/{id?}',[
    'uses' =>'AndroidController@get',
     'as' => 'android'
 ]);
+
+Route::get('/proprietaire', function() {
+	return view('proprietaire');
+});
+
+
+
+
+
+Route::group(['prefix' => 'admin'], function () {
+    Voyager::routes();
+});
+
