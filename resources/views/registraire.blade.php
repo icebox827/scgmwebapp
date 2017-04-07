@@ -58,11 +58,20 @@
                                 <input type="email" name="email" parsley-trigger="change" required
                                        placeholder="Entrez le numero de Permis du conducteur" class="form-control" id="emailAddress">
                             </div>
-                            <div class="form-group">
-                                <label for="emailAddress">Photo*</label>
-                                <input type="email" name="email" parsley-trigger="change" required
-                                       placeholder="choisir la photo du conducteur" class="form-control" id="emailAddress">
+
+                            <div class="form-group gal-upload">
+                                <label for="file-4" class="col-sm-2 control-label">Photo*</label>
+
+                                <div class="col-sm-10">
+                                    <input id="file-4" class="form-control file-loading" type="file" name="picture[]" multiple data-show-caption="true">
+
+                                </div>
                             </div>
+                            {{--<div class="form-group">--}}
+                                {{--<label for="emailAddress">Photo*</label>--}}
+                                {{--<input type="email" name="email" parsley-trigger="change" required--}}
+                                       {{--placeholder="choisir la photo du conducteur" class="form-control" id="emailAddress">--}}
+                            {{--</div>--}}
                             <div class="form-group">
                                 <label for="emailAddress">Empreinte Index-droite*</label>
                                 <input type="email" name="email" parsley-trigger="change" required
