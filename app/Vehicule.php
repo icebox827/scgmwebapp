@@ -9,4 +9,8 @@ class Vehicule extends Model
     public function proprietaireId(){
         return $this->belongsTo(Proprietaire::class);
     }
+
+    public function proprietaire(){
+        return $this->belongsTo(Proprietaire::class);
+    }
 }

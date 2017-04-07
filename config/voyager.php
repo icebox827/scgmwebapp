@@ -132,9 +132,9 @@ return [
             'image' => '/images/widget-backgrounds/02.png',
         ],
         [
-            'name'  => 'Post',
-            'icon'  => 'voyager-news',
-            'model' => TCG\Voyager\Models\Post::class,
+            'name'  => 'Motocyclettes',
+            'icon'  => 'voyager-truck',
+            'model' => TCG\Voyager\Models\Vehicule::class,
             'url'   => 'admin/posts',
             'image' => '/images/widget-backgrounds/03.png',
         ],
