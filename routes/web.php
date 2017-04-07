@@ -22,12 +22,37 @@ Route::group(['prefix' => 'admin'], function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index');
+Route::get('/home', [
+    'uses'=>'HomeController@index',
+    'as'=>'home'
+
+]);
+
+Route::get('/dashboard', [
+    'uses'=>'HomeController@index',
+    'as'=>'dashboard'
+
+]);
 
 
 Route::get('/android/{id?}',[
    'uses' =>'AndroidController@get',
     'as' => 'android'
+]);
+
+Route::get('/addvehicule',[
+    'uses' =>'AddvehiculeController@index',
+    'as' => 'addvehicule'
+]);
+
+Route::get('/addconducteur',[
+    'uses' =>'AddconducteurController@index',
+    'as' => 'addconducteur'
+]);
+
+Route::get('/addproprietaire',[
+    'uses' =>'AddproprietaireController@index',
+    'as' => 'addproprietaire'
 ]);
 
 Route::get('/proprietaire',[
@@ -49,6 +74,17 @@ Route::get('/registraire', [
 
 ]);
 
+Route::get('/reference', [
+    'uses'=>'ReferenceController@index',
+    'as'=>'reference'
+
+]);
+
+Route::get('/addreference', [
+    'uses'=>'AddreferenceController@index',
+    'as'=>'addreference'
+
+]);
 
 
 

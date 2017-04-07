@@ -96,7 +96,7 @@
                         <li class="text-muted menu-title">Navigation</li>
 
                         <li>
-                            <a href="index.html" class="waves-effect"><i class="zmdi zmdi-view-dashboard"></i> <span> Tableau de Bor-SCGM </span> </a>
+                            <a href="{{route('home')}}" class="waves-effect"><i class="zmdi zmdi-view-dashboard"></i> <span> Tableau de Bor-SCGM </span> </a>
                         </li>
 
                         <li>
@@ -110,6 +110,11 @@
 
                         <li>
                             <a href="{{route('proprietaire')}}" class="waves-effect"><i class="zmdi zmdi-collection-text"></i><span> Proprietaires </span> </a>
+
+                        </li>
+
+                        <li>
+                            <a href="{{route('reference')}}" class="waves-effect"><i class="zmdi zmdi-collection-text"></i><span> Reference </span> </a>
 
                         </li>
 
