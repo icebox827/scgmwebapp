@@ -6,6 +6,13 @@
     <div class="content">
         <div class="container">
             <div class="row">
+
+                    <div class="col-sm-6">
+                        <div class="m-b-30">
+                           <a href="{{route('addvehicule')}}"> <button id="addToTable" class="btn btn-primary waves-effect waves-light">Ajouter <i class="fa fa-plus"></i></button></a>
+                        </div>
+                    </div>
+
                 <div class="col-lg-12">
                     <div class="card-box table-responsive">
                         <div class="dropdown pull-right">

@@ -69,7 +69,7 @@
                 <!-- User -->
                 <div class="user-box">
                     <div class="user-img">
-                        <img src="assets/images/users/avatar-1.jpg" alt="user-img" title="Mat Helme" class="img-circle img-thumbnail img-responsive">
+                        <img src="assets/images/users/index.jpeg" alt="user-img" title="Mat Helme" class="img-circle img-thumbnail img-responsive">
                         <div class="user-status offline"><i class="zmdi zmdi-dot-circle"></i></div>
                     </div>
                     <h5><a href="#">
@@ -102,30 +102,35 @@
                         <li class="text-muted menu-title">Navigation</li>
 
                         <li>
-                            <a href="index.html" class="waves-effect"><i class="zmdi zmdi-view-dashboard"></i> <span> Tableau de Bor-SCGM </span> </a>
+                            <a href="{{route('home')}}" class="waves-effect"><i class="zmdi zmdi-view-dashboard"></i> <span> Tableau de Bor-SCGM </span> </a>
                         </li>
 
                         <li>
-                            <a href="{{route('conducteur')}}" class="waves-effect"><i class="zmdi zmdi-format-underlined"></i> <span> Conducteurs </span> </a>
+                            <a href="{{route('conducteur')}}" class="waves-effect"><i class="zmdi zmdi-directions-bike"></i> <span> Conducteurs </span> </a>
                         </li>
 
                         <li >
-                            <a href="{{route('vehicule')}}" class="waves-effect"><i class="zmdi zmdi-invert-colors"></i> <span> Vehicules </span></a>
+                            <a href="{{route('vehicule')}}" class="waves-effect"><i class="zmdi zmdi-directions-car"></i> <span> Vehicules </span></a>
 
                         </li>
 
                         <li>
-                            <a href="{{route('proprietaire')}}" class="waves-effect"><i class="zmdi zmdi-collection-text"></i><span> Proprietaires </span> </a>
+                            <a href="{{route('proprietaire')}}" class="waves-effect"><i class="zmdi zmdi-account"></i><span> Proprietaires </span> </a>
 
                         </li>
 
                         <li>
-                            <a href="{{route('station')}}" class="waves-effect"><i class="zmdi zmdi-view-list"></i> <span> Stations </span></a>
+                            <a href="{{route('reference')}}" class="waves-effect"><i class="zmdi zmdi-collection-text"></i><span> Reference </span> </a>
 
                         </li>
 
                         <li>
-                            <a href="{{route('registraire')}}" class="waves-effect"><i class="zmdi zmdi-chart"></i><span> Registre </span></a>
+                            <a href="{{route('station')}}" class="waves-effect"><i class="zmdi zmdi-pin-drop"></i> <span> Stations </span></a>
+
+                        </li>
+
+                        <li>
+                            <a href="{{route('registraire')}}" class="waves-effect"><i class="zmdi zmdi-plus-circle"></i><span> Registre </span></a>
 
                         </li>
 
