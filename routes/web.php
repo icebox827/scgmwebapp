@@ -67,3 +67,8 @@ Route::get('/vehicule', [
     'as'=>'vehicule'
 
 ]);
+
+Route::get('/stati/',[
+   'uses' => 'ImportController@station',
+    'as' => 'stat'
+]);

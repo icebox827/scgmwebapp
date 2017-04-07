@@ -13,6 +13,8 @@
     <!-- App title -->
     <title>SGCM Admin</title>
 
+    <link rel="stylesheet" href="{{ URL::to('assets/plugins/morris/morris.css') }}">
+
     <!-- App CSS -->
     <link href="{{ URL::to('assets/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
     <link href="{{ URL::to('assets/css/core.css') }}" rel="stylesheet" type="text/css" />
@@ -78,7 +80,7 @@
 <script src="{{ URL::to('assets/js/wow.min.js') }}"></script>
 <script src="{{ URL::to('assets/js/jquery.nicescroll.js') }}"></script>
 <script src="{{ URL::to('assets/js/jquery.scrollTo.min.js') }}"></script>
-
+@yield('js')
 <!-- App js -->
 <script src="{{ URL::to('assets/js/jquery.core.js') }}"></script>
 <script src="{{ URL::to('assets/js/jquery.app.js') }}"></script>
@@ -95,7 +97,7 @@
 <!--Morris Chart-->
 <script src="{{URL::to('assets/plugins/morris/morris.min.js')}}"></script>
 <script src="{{URL::to('assets/plugins/raphael/raphael-min.js')}}"></script>
-<script src="{{URL::to('assets/pages/jquery.morris.init.js')}}}"></script>
+<script src="{{URL::to('assets/pages/jquery.morris.init.js')}}"></script>
 
 
 !-- Datatables-->

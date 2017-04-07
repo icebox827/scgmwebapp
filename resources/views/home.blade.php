@@ -11,7 +11,7 @@
                 <div class="col-lg-3 col-md-6">
                     <div class="card-box widget-user">
                         <div class="text-center">
-                            <h2 class="text-custom" data-plugin="counterup">0</h2>
+                            <h2 class="text-custom" data-plugin="counterup">{{ $v }}</h2>
                             <h5>Motocyclettes</h5>
                         </div>
                     </div>
@@ -20,7 +20,7 @@
                 <div class="col-lg-3 col-md-6">
                     <div class="card-box widget-user">
                         <div class="text-center">
-                            <h2 class="text-pink" data-plugin="counterup">0</h2>
+                            <h2 class="text-pink" data-plugin="counterup">{{ $p }}</h2>
                             <h5>Proprietaires</h5>
                         </div>
                     </div>
@@ -29,7 +29,7 @@
                 <div class="col-lg-3 col-md-6">
                     <div class="card-box widget-user">
                         <div class="text-center">
-                            <h2 class="text-warning" data-plugin="counterup">0</h2>
+                            <h2 class="text-warning" data-plugin="counterup">{{ $c }}</h2>
                             <h5>Conducteurs</h5>
                         </div>
                     </div>
@@ -38,7 +38,7 @@
                 <div class="col-lg-3 col-md-6">
                     <div class="card-box widget-user">
                         <div class="text-center">
-                            <h2 class="text-info" data-plugin="counterup">0</h2>
+                            <h2 class="text-info" data-plugin="counterup">{{ $s }}</h2>
                             <h5>Station</h5>
                         </div>
                     </div>
@@ -144,3 +144,14 @@
 
     </div> <!-- content -->
 @endsection
+
+@section('js')
+    <script src="{{ URL::to('assets/plugins/jquery-knob/jquery.knob.js') }}"></script>
+
+    <!--Morris Chart-->
+    <script src="{{ URL::to('assets/plugins/morris/morris.min.js') }}"></script>
+    <script src="{{ URL::to('assets/plugins/raphael/raphael-min.js') }}"></script>
+
+    <!-- Dashboard init -->
+    <script src="{{ URL::to('assets/pages/jquery.dashboard.js') }}"></script>
+    @endsection

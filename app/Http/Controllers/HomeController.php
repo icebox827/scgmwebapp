@@ -2,6 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Conducteur;
+use App\Proprietaire;
+use App\Station;
+use App\Vehicule;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -23,7 +27,11 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $v = Vehicule::all()->count();
+        $p = Proprietaire::all()->count();
+        $c = Conducteur::all()->count();
+        $s = Station::all()->count();
+        return view('home',compact('v','p','c','s'));
     }
 
 

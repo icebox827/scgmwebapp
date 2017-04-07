@@ -72,7 +72,13 @@
                         <img src="assets/images/users/avatar-1.jpg" alt="user-img" title="Mat Helme" class="img-circle img-thumbnail img-responsive">
                         <div class="user-status offline"><i class="zmdi zmdi-dot-circle"></i></div>
                     </div>
-                    <h5><a href="#">Mat Helme</a> </h5>
+                    <h5><a href="#">
+                            @if(Auth::check())
+                                {{ Auth::user()->name }}
+                                @else
+                                Jhon Doe
+                            @endif
+                        </a> </h5>
                     <ul class="list-inline">
                         <li>
                             <a href="#" >
