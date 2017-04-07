@@ -6,13 +6,13 @@
     <meta name="robots" content="none" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
     <meta name="description" content="admin login">
-    <title>Admin - {{ Voyager::setting("title") }}</title>
+    <title>SCGM-Admin - {{ Voyager::setting("title") }}</title>
     <link rel="stylesheet" href="{{ voyager_asset('lib/css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ voyager_asset('css/animate.min.css') }}">
     <link rel="stylesheet" href="{{ voyager_asset('css/login.css') }}">
     <style>
         body {
-            background-image:url('{{ Voyager::image( Voyager::setting("admin_bg_image"), config('voyager.assets_path') . "/images/bg.jpg" ) }}');
+            background-image:url('{{ Voyager::image( Voyager::setting("admin_bg_image"), config('voyager.assets_path') . "/images/pnh.jpg" ) }}');
         }
         .login-sidebar:after {
             background: linear-gradient(-135deg, {{config('voyager.login.gradient_a','#ffffff')}}, {{config('voyager.login.gradient_b','#ffffff')}});
@@ -42,8 +42,8 @@
                         <img class="img-responsive pull-left logo hidden-xs animated fadeIn" src="{{ Voyager::image($admin_logo_img) }}" alt="Logo Icon">
                         @endif
                         <div class="copy animated fadeIn">
-                            <h1>{{ Voyager::setting('admin_title', 'Voyager') }}</h1>
-                            <p>{{ Voyager::setting('admin_description', 'Welcome to Voyager. The Missing Admin for Laravel') }}</p>
+                            <h1>{{ Voyager::setting('admin_title', 'POLICE NATIONAL D\'HAITI) }}</h1>
+                            <p>{{ Voyager::setting('admin_description', 'Bienvenue sur SCGM. Le Tableau de Controle des Motocyclettes') }}</p>
                         </div>
                     </div> <!-- .logo-title-container -->
                 </div>
