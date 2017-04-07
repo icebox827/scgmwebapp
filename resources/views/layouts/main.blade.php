@@ -22,6 +22,14 @@
     <link href="{{ URL::to('assets/css/menu.css') }}" rel="stylesheet" type="text/css" />
     <link href="{{ URL::to('assets/css/responsive.css') }}" rel="stylesheet" type="text/css" />
 
+    <!-- DataTables -->
+    <link href="{{URL::to('assets/plugins/datatables/jquery.dataTables.min.css')}}" rel="stylesheet" type="text/css" />
+    <link href="{{URL::to('assets/plugins/datatables/buttons.bootstrap.min.css')}}" rel="stylesheet" type="text/css" />
+    <link href="{{URL::to('assets/plugins/datatables/fixedHeader.bootstrap.min.css')}}" rel="stylesheet" type="text/css" />
+    <link href="{{URL::to('assets/plugins/datatables/responsive.bootstrap.min.css')}}" rel="stylesheet" type="text/css" />
+    <link href="{{URL::to('assets/plugins/datatables/scroller.bootstrap.min.css')}}" rel="stylesheet" type="text/css" />
+
+
     <!-- HTML5 Shiv and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -47,6 +55,18 @@
     var resizefunc = [];
 </script>
 
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('#datatable').dataTable();
+        $('#datatable-keytable').DataTable( { keys: true } );
+        $('#datatable-responsive').DataTable();
+        $('#datatable-scroller').DataTable( { ajax: "assets/plugins/datatables/json/scroller-demo.json", deferRender: true, scrollY: 380, scrollCollapse: true, scroller: true } );
+        var table = $('#datatable-fixed-header').DataTable( { fixedHeader: true } );
+    } );
+    TableManageButtons.init();
+
+</script>
+
 <!-- jQuery  -->
 <script src="{{ URL::to('assets/js/jquery.min.js') }}"></script>
 <script src="{{ URL::to('assets/js/bootstrap.min.js') }}"></script>
@@ -63,5 +83,38 @@
 <script src="{{ URL::to('assets/js/jquery.core.js') }}"></script>
 <script src="{{ URL::to('assets/js/jquery.app.js') }}"></script>
 
+<!-- Counter Up  -->
+<script src="{{URL::to('assets/plugins/waypoints/lib/jquery.waypoints.js')}}"></script>
+<script src="{{URL::to('assets/plugins/counterup/jquery.counterup.min.js')}}"></script>
+
+<!-- KNOB JS -->
+<!--[if IE]>
+<script type="text/javascript" src="assets/plugins/jquery-knob/excanvas.js"></script>
+<![endif]-->
+<script src="assets/plugins/jquery-knob/jquery.knob.js"></script>
+<!--Morris Chart-->
+<script src="{{URL::to('assets/plugins/morris/morris.min.js')}}"></script>
+<script src="{{URL::to('assets/plugins/raphael/raphael-min.js')}}"></script>
+<script src="{{URL::to('assets/pages/jquery.morris.init.js')}}}"></script>
+
+
+!-- Datatables-->
+<script src="{{URL::to('assets/plugins/datatables/jquery.dataTables.min.js')}}"></script>
+<script src="{{URL::to('assets/plugins/datatables/dataTables.bootstrap.js')}}"></script>
+<script src="{{URL::to('assets/plugins/datatables/dataTables.buttons.min.js')}}"></script>
+<script src="{{URL::to('assets/plugins/datatables/buttons.bootstrap.min.js')}}"></script>
+<script src="{{URL::to('assets/plugins/datatables/jszip.min.js')}}"></script>
+<script src="{{URL::to('assets/plugins/datatables/pdfmake.min.js')}}"></script>
+<script src="{{URL::to('assets/plugins/datatables/vfs_fonts.js')}}"></script>
+<script src="{{URL::to('assets/plugins/datatables/buttons.html5.min.js')}}"></script>
+<script src="{{URL::to('assets/plugins/datatables/buttons.print.min.js')}}"></script>
+<script src="{{URL::to('assets/plugins/datatables/dataTables.fixedHeader.min.js')}}"></script>
+<script src="{{URL::to('assets/plugins/datatables/dataTables.keyTable.min.js')}}"></script>
+<script src="{{URL::to('assets/plugins/datatables/dataTables.responsive.min.js')}}"></script>
+<script src="{{URL::to('assets/plugins/datatables/responsive.bootstrap.min.js')}}"></script>
+<script src="{{URL::to('assets/plugins/datatables/dataTables.scroller.min.js')}}"></script>
+
+<!-- Datatable init js -->
+<script src="assets/pages/datatables.init.js"></script>
 </body>
 </html>

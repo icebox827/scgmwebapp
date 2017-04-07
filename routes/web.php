@@ -30,10 +30,24 @@ Route::get('/android/{id?}',[
     'as' => 'android'
 ]);
 
-Route::get('/proprietaire', function() {
-	return view('proprietaire');
-});
+Route::get('/proprietaire',[
+    'uses'=>'ProprietaireController@index',
+    'as'=>'proprietaire'
 
+
+]);
+
+Route::get('/station',[
+    'uses'=>'StationController@index',
+    'as'=>'station'
+
+]);
+
+Route::get('/registraire', [
+    'uses'=>'RegistraireController@index',
+    'as'=>'registraire'
+
+]);
 
 
 
@@ -41,3 +55,15 @@ Route::get('/proprietaire', function() {
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
 });
+
+Route::get('/conducteur', [
+    'uses'=>'ConducteurController@index',
+    'as'=>'conducteur'
+
+]);
+
+Route::get('/vehicule', [
+    'uses'=>'VehiculeController@index',
+    'as'=>'vehicule'
+
+]);
