@@ -28,7 +28,7 @@ class CreateProprietairesTable extends Migration
             $table->string("departement")->nullable();
             $table->string("telephone")->nullable();
             $table->string("email")->nullable();
-            $table->text("memp")->nullable();
+            $table->text("memo")->nullable();
             $table->timestamps();
         });
     }
