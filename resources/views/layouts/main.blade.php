@@ -83,24 +83,6 @@
 <script src="{{ URL::to('assets/js/jquery.nicescroll.js') }}"></script>
 <script src="{{ URL::to('assets/js/jquery.scrollTo.min.js') }}"></script>
 @yield('js')
-<!-- App js -->
-<script src="{{ URL::to('assets/js/jquery.core.js') }}"></script>
-<script src="{{ URL::to('assets/js/jquery.app.js') }}"></script>
-
-<!-- Counter Up  -->
-<script src="{{URL::to('assets/plugins/waypoints/lib/jquery.waypoints.js')}}"></script>
-<script src="{{URL::to('assets/plugins/counterup/jquery.counterup.min.js')}}"></script>
-
-<!-- KNOB JS -->
-<!--[if IE]>
-<script type="text/javascript" src="assets/plugins/jquery-knob/excanvas.js"></script>
-<![endif]-->
-<script src="assets/plugins/jquery-knob/jquery.knob.js"></script>
-<!--Morris Chart-->
-<script src="{{URL::to('assets/plugins/morris/morris.min.js')}}"></script>
-<script src="{{URL::to('assets/plugins/raphael/raphael-min.js')}}"></script>
-<script src="{{URL::to('assets/pages/jquery.morris.init.js')}}"></script>
-
 
 !-- Datatables-->
 <script src="{{URL::to('assets/plugins/datatables/jquery.dataTables.min.js')}}"></script>
@@ -134,6 +116,27 @@
 <script src="{{URL::to('assets/plugins/bootstrap-daterangepicker/daterangepicker.js')}}"></script>
 <script src="{{URL::to('assets/plugins/bootstrap-maxlength/bootstrap-maxlength.min.js')}}" type="text/javascript"></script>
 <script type="text/javascript" src="{{URL::to('assets/js/jquery.uploadPreview.min.js')}}"></script>
+<script src="{{ URL::to('assets/plugins/bootstrap-filestyle/src/bootstrap-filestyle.min.js') }}" type="text/javascript"></script>
+<!-- App js -->
+<script src="{{ URL::to('assets/js/jquery.core.js') }}"></script>
+<script src="{{ URL::to('assets/js/jquery.app.js') }}"></script>
+
+<!-- Counter Up  -->
+<script src="{{URL::to('assets/plugins/waypoints/lib/jquery.waypoints.js')}}"></script>
+<script src="{{URL::to('assets/plugins/counterup/jquery.counterup.min.js')}}"></script>
+
+<!-- KNOB JS -->
+<!--[if IE]>
+<script type="text/javascript" src="assets/plugins/jquery-knob/excanvas.js"></script>
+<![endif]-->
+<script src="assets/plugins/jquery-knob/jquery.knob.js"></script>
+<!--Morris Chart-->
+<script src="{{URL::to('assets/plugins/morris/morris.min.js')}}"></script>
+<script src="{{URL::to('assets/plugins/raphael/raphael-min.js')}}"></script>
+<script src="{{URL::to('assets/pages/jquery.morris.init.js')}}"></script>
+
+
+
 
 <!-- Datatable init js -->
 <script src="assets/pages/datatables.init.js"></script>

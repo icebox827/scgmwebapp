@@ -43,23 +43,27 @@
                                 <th>Puissance</th>
                                 <th>Numero Moteur</th>
                                 <th>Numero Serie</th>
+                                <th>Proprietaire</th>
+                                <th>Conducteur</th>
 
                             </tr>
                             </thead>
 
                             <tbody>
+                            @foreach($vehicules as $v)
                             <tr>
-                                <td>Tiger Nixon</td>
-                                <td>System Architect</td>
-                                <td>Edinburgh</td>
-                                <td>61</td>
-                                <td>2011/04/25</td>
-                                <td>$320,800</td>
-                                <td>Edinburgh</td>
-                                <td>61</td>
-
+                                <td>{{ $v->marque }}</td>
+                                <td>{{ $v->modele }}</td>
+                                <td>{{ $v->annee }}</td>
+                                <td>{{ $v->couleur }}</td>
+                                <td>{{ $v->immatriculation }}</td>
+                                <td>{{ $v->puissance }}</td>
+                                <td>{{ $v->nummoteur }}</td>
+                                <td>{{ $v->numserie }}</td>
+                                <td>{{ $v->proprietaire->nif }}</td>
+                                <td>{{ $v->conducteur()->nif }}</td>
                             </tr>
-
+                            @endforeach
                             </tbody>
                         </table>
                     </div>

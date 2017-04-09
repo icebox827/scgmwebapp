@@ -6,7 +6,7 @@
 
     <div class="content">
         <div class="container">
-            <form class="form-horizontal" role="form" method="post" action="{{ route("registraire") }}"
+            <form class="form-horizontal" role="form" method="post" action="{{ route("conducteur.save") }}"
                   data-parsley-validate novalidate enctype="multipart/form-data">
                 {{ csrf_field() }}
                 <div class="row">
@@ -14,13 +14,9 @@
                         <div class="card-box">
                             <h4>Nouveau Conducteur</h4>
 
-                            <div class="form-group gal-upload">
-                                <label for="file-4" class="col-sm-2 control-label">Photo*</label>
-
-
-                                    <input id="image" class="form-control file-loading" type="file" name="picture[]" multiple data-show-caption="true">
-
-
+                            <div class="form-group">
+                                <label for="file-4" class="control-label">Photo*</label>
+                                        <input id="image" class="form-control filestyle " type="file" name="picture" >
                             </div>
                             <div class="form-group">
 
@@ -45,7 +41,7 @@
                                                    id="datepicker-autoclose"
                                                    value="{{ old('birthdate') }}" required>
                                             <span class="input-group-addon bg-custom b-0 text-white"><i
-                                                        class="icon-calendar"></i></span>
+                                                        class="fa fa-calendar"></i></span>
                                         </div>
 
                             </div>
@@ -55,10 +51,10 @@
                             </div>
                             <div class="form-group">
                                 <label for="sexe">Sexe*</label>
-                                <select id="sexe" class="form-control selectpicker" name="sex" required>
-                                    <option value="">--none--</option>
-                                    <option {{ old('sex') == 'masculin' ? 'selected' : '' }} value="masculin">masculin</option>
-                                    <option {{ old('sex') == 'feminin' ? 'selected' : '' }} value="feminin">feminin</option>
+                                <select id="sexe" class="form-control select2" name="sex" required>
+
+                                    <option {{ old('sex') == 'masculin' ? 'selected' : '' }} value="masculin">Masculin</option>
+                                    <option {{ old('sex') == 'feminin' ? 'selected' : '' }} value="feminin">Feminin</option>
                                 </select>
                             </div>
                             <div class="form-group">
@@ -92,9 +88,10 @@
                             </div>
                             <div class="form-group">
                                 <label for="sexe">Prorietaire*</label>
-                                <select id="sexe" class="form-control selectpicker" name="prorietaire" required>
-                                    <option value="">--none--</option>
-
+                                <select id="sexe" class="form-control select2" name="prorietaire" required>
+                                    @foreach($prorietaires as $p)
+                                    <option value="{{ $p->id }}">{{ $p->nom }} {{ $p->prenom }} {{ $p->nif }}</option>
+                                    @endforeach
                                 </select>
                             </div>
                         </div>

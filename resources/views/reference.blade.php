@@ -41,13 +41,14 @@
                             </thead>
 
                             <tbody>
+                            @foreach($references as $r)
                             <tr>
-                                <td>Tiger Nixon</td>
-                                <td>System Architect</td>
-                                <td>Edinburgh</td>
-                                <td>61</td>
+                                <td>{{ $r->nom }}</td>
+                                <td>{{ $r->prenom }}</td>
+                                <td>{{ $r->telephone }}</td>
+                                <td>{{ $r->commune->name }}</td>
                             </tr>
-
+                            @endforeach
                             </tbody>
                         </table>
                     </div>

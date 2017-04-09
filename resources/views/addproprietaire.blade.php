@@ -6,7 +6,7 @@
 
     <div class="content">
         <div class="container">
-            <form class="form-horizontal" role="form" method="post" action="{{ route("registraire") }}"
+            <form class="form-horizontal" role="form" method="post" action="{{ route("proprietaire.save") }}"
                   data-parsley-validate novalidate enctype="multipart/form-data">
                 {{ csrf_field() }}
                 <div class="row">
@@ -14,14 +14,7 @@
                         <div class="card-box">
                             <h4>Nouveau Proprietaire</h4>
 
-                            <div class="form-group gal-upload">
-                                <label for="file-4" class="col-sm-2 control-label">Photo*</label>
 
-
-                                <input id="file-4" class="form-control file-loading" type="file" name="picture[]" multiple data-show-caption="true">
-
-
-                            </div>
                             <div class="form-group">
 
                                 <label for="nom">Nom*</label>
@@ -45,20 +38,20 @@
                                            id="datepicker-autoclose"
                                            value="{{ old('birthdate') }}" required>
                                             <span class="input-group-addon bg-custom b-0 text-white"><i
-                                                        class="icon-calendar"></i></span>
+                                                        class="fa fa-calendar"></i></span>
                                 </div>
 
                             </div>
                             <div class="form-group">
                                 <label for="lnaissance">Lieu de Naissance*</label>
-                                <input id="lnaissance" class="form-control"  name="lnaissance" type="text" value="{{ old('name') }}" required>
+                                <input id="lnaissance" class="form-control"  name="lnaissance" type="text" value="{{ old('lnaissance') }}" required>
                             </div>
                             <div class="form-group">
                                 <label for="sexe">Sexe*</label>
-                                <select id="sexe" class="form-control selectpicker" name="sex" required>
+                                <select id="sexe" class="form-control select2" name="sex" required>
                                     <option value="">--none--</option>
-                                    <option {{ old('sex') == 'masculin' ? 'selected' : '' }} value="masculin">masculin</option>
-                                    <option {{ old('sex') == 'feminin' ? 'selected' : '' }} value="feminin">feminin</option>
+                                    <option {{ old('sex') == 'masculin' ? 'selected' : '' }} value="Masculin">Masculin</option>
+                                    <option {{ old('sex') == 'feminin' ? 'selected' : '' }} value="Feminin">Feminin</option>
                                 </select>
                             </div>
                             <div class="form-group">
@@ -75,14 +68,6 @@
                             </div>
 
                             <div class="form-group">
-                                <label for="empreinted">Empreinte Index-droite*</label>
-                                <input id="empreinted" class="form-control"  name="empreinted" type="text" value="{{ old('empreinted') }}" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="empreinteg">Empreinte Index-gauche*</label>
-                                <input id="empreinteg" class="form-control"  name="empreinteg" type="text" value="{{ old('empreinteg') }}" required>
-                            </div>
-                            <div class="form-group">
                                 <label for="tel">Telephone*</label>
                                 <input id="tel" class="form-control"  name="tel" type="text" value="{{ old('tel') }}" required>
                             </div>
@@ -91,10 +76,11 @@
                                 <input id="adresse" class="form-control"  name="adresse" type="text" value="{{ old('adresse') }}" required>
                             </div>
                             <div class="form-group">
-                                <label for="sexe">commune*</label>
-                                <select id="sexe" class="form-control selectpicker" name="prorietaire" required>
-                                    <option value="">--none--</option>
-
+                                <label for="sexe">Commune*</label>
+                                <select id="sexe" class="form-control select2" name="commune" required>
+                                    @foreach($communes as $c)
+                                    <option value="{{ $c->id }}">{{ $c->name }}</option>
+                                    @endforeach
                                 </select>
                             </div>
                         </div>

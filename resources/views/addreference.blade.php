@@ -6,8 +6,8 @@
 
     <div class="content">
         <div class="container">
-            <form action="">
-
+            <form action="{{ route('reference.save') }}" method="post">
+                {{ csrf_field() }}
                 <div class="row">
                     <div class="col-md-6">
                             <div class="card-box">
@@ -30,6 +30,14 @@
                                 <div class="form-group">
                                     <label for="tel">Telephone*</label>
                                     <input id="tel" class="form-control"  name="tel" type="text" value="{{ old('tel') }}" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="sexe">Commune*</label>
+                                    <select id="sexe" class="form-control select2" name="commune" required>
+                                        @foreach($communes as $c)
+                                            <option value="{{ $c->id }}">{{ $c->name }}</option>
+                                        @endforeach
+                                    </select>
                                 </div>
                             </div>
                         {{--<div class="form-group text-right m-b-0">--}}

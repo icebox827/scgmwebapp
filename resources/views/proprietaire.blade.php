@@ -10,6 +10,11 @@
 					<div class="m-b-30">
 						<a href="{{route('addproprietaire')}}"> <button id="addToTable" class="btn btn-primary waves-effect waves-light">Ajouter <i class="fa fa-plus"></i></button></a>
 					</div>
+					<ul>
+					@foreach($errors as  $e)
+						<li>{{ $e }}</li>
+						@endforeach
+					</ul>
 				</div>
 				<div class="col-lg-12">
 					<div class="card-box table-responsive">
@@ -47,18 +52,20 @@
 							</thead>
 
 							<tbody>
+							@foreach($proprietaires as $p)
 							<tr>
-								<td>Tiger Nixon</td>
-								<td>System Architect</td>
-								<td>Edinburgh</td>
-								<td>61</td>
-								<td>2011/04/25</td>
-								<td>$320,800</td>
-								<td>Edinburgh</td>
-								<td>61</td>
-								<td>2011/04/25</td>
-								<td>$320,800</td>
+								<td>{{ $p->nom }}</td>
+								<td>{{ $p->prenom }}</td>
+								<td>{{ $p->datenaissance }}</td>
+								<td>{{ $p->datenaissance }}</td>
+								<td>{{ $p->sexe }}</td>
+								<td>{{ $p->cin }}</td>
+								<td>{{ $p->nif }}</td>
+								<td>{{ $p->permisconduire }}</td>
+								<td>{{ $p->telephone }}</td>
+								<td>{{ $p->adress }}</td>
 							</tr>
+								@endforeach
 
 							</tbody>
 						</table>
