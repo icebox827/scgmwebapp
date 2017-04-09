@@ -165,12 +165,12 @@
                             </div>
 
                             <div class="form-group">
-                                <label for="empreinted">Empreinte Index-droite*</label>
-                                <input id="empreinted" class="form-control"  name="empreinted" type="text" value="{{ old('empreinted') }}" required>
+                                <label for="file-4" class="control-label">Empreinte Index-droite*</label>
+                                <input id="image" class="form-control filestyle " type="file" name="picture" >
                             </div>
                             <div class="form-group">
-                                <label for="empreinteg">Empreinte Index-gauche*</label>
-                                <input id="empreinteg" class="form-control"  name="empreinteg" type="text" value="{{ old('empreinteg') }}" required>
+                                <label for="file-4" class="control-label">Empreinte Index-gauche*</label>
+                                <input id="image" class="form-control filestyle " type="file" name="picture" >
                             </div>
                             <div class="form-group">
                                 <label for="tel">Telephone*</label>
