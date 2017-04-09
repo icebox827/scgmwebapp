@@ -133,7 +133,6 @@
 <script src="{{URL::to('assets/plugins/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js')}}"></script>
 <script src="{{URL::to('assets/plugins/bootstrap-daterangepicker/daterangepicker.js')}}"></script>
 <script src="{{URL::to('assets/plugins/bootstrap-maxlength/bootstrap-maxlength.min.js')}}" type="text/javascript"></script>
-{{URL::to('')}}
 
 <!-- Datatable init js -->
 <script src="assets/pages/datatables.init.js"></script>

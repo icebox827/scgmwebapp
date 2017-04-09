@@ -9,31 +9,44 @@
             <form action="">
 
                 <div class="row">
-                    <div class="col-md-12">
+                    <div class="col-md-6">
                             <div class="card-box">
                                 <h4>Nouvelle-Personnes de Reference</h4>
                                 <div class="form-group">
-                                    <label for="pass1">Nom*</label>
-                                    <input id="pass1" type="password" placeholder="Nom" required
-                                           class="form-control">
+
+                                    <label for="nom">Nom*</label>
+
+                                    <input id="name" class="form-control" name="name" type="text" value="{{ old('name') }}" required>
+
                                 </div>
                                 <div class="form-group">
-                                    <label for="passWord2">Prenom*</label>
-                                    <input data-parsley-equalto="#pass1" type="password" required
-                                           placeholder="Prenom" class="form-control" id="passWord2">
+                                    <label for="prenom">Prenom*</label>
+                                    <input  id ="lastname" class="form-control" name="prenom" type="text" value="{{ old('prenom') }}" required>
                                 </div>
                                 <div class="form-group">
-                                    <label for="passWord2">Adresse*</label>
-                                    <input data-parsley-equalto="#pass1" type="password" required
-                                           placeholder="Adresse" class="form-control" id="passWord2">
+                                    <label for="adresse">Adresse*</label>
+                                    <input id="adresse" class="form-control"  name="adresse" type="text" value="{{ old('adresse') }}" required>
                                 </div>
                                 <div class="form-group">
-                                    <label for="passWord2">Telephone*</label>
-                                    <input data-parsley-equalto="#pass1" type="password" required
-                                           placeholder="Telephone" class="form-control" id="passWord2">
+                                    <label for="tel">Telephone*</label>
+                                    <input id="tel" class="form-control"  name="tel" type="text" value="{{ old('tel') }}" required>
                                 </div>
                             </div>
-                        <div class="form-group text-right m-b-0">
+                        {{--<div class="form-group text-right m-b-0">--}}
+                            {{--<button class="btn btn-primary waves-effect waves-light" type="submit">--}}
+                                {{--Enregistrer--}}
+                            {{--</button>--}}
+                            {{--<button type="reset" class="btn btn-default waves-effect waves-light m-l-5">--}}
+                                {{--Annuler--}}
+                            {{--</button>--}}
+                        {{--</div>--}}
+                    </div>
+
+
+                </div>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="form-group text-center m-b-0">
                             <button class="btn btn-primary waves-effect waves-light" type="submit">
                                 Enregistrer
                             </button>
