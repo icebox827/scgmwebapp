@@ -9,7 +9,7 @@
 
             <!-- LOGO -->
             <div class="topbar-left">
-                <a href="index.html" class="logo"><span>SCGM<span>pnh</span></span><i class="zmdi zmdi-layers"></i></a>
+                <a href="{{route('dashboard')}}" class="logo"><span>SCGM<span>pnh</span></span><i class="zmdi zmdi-layers"></i></a>
             </div>
 
             <!-- Button mobile view to collapse sidebar menu -->
@@ -69,7 +69,7 @@
                 <!-- User -->
                 <div class="user-box">
                     <div class="user-img">
-                        <img src="assets/images/users/index.jpeg" alt="user-img" title="Mat Helme" class="img-circle img-thumbnail img-responsive">
+                        <img src="{{ URL::to('assets/images/users/pnh.png') }}" alt="user-img" title="Mat Helme" class="img-circle img-thumbnail img-responsive">
                         <div class="user-status offline"><i class="zmdi zmdi-dot-circle"></i></div>
                     </div>
                     <h5><a href="#">
