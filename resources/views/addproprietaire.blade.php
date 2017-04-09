@@ -90,6 +90,13 @@
                                 <label for="adresse">Adresse*</label>
                                 <input id="adresse" class="form-control"  name="adresse" type="text" value="{{ old('adresse') }}" required>
                             </div>
+                            <div class="form-group">
+                                <label for="sexe">commune*</label>
+                                <select id="sexe" class="form-control selectpicker" name="prorietaire" required>
+                                    <option value="">--none--</option>
+
+                                </select>
+                            </div>
                         </div>
 
                         {{--<div class="form-group text-right m-b-0">--}}

@@ -48,6 +48,14 @@
                                 <label for="numeroserie">Numero Serie*</label>
                                 <input  id ="numeroserie" class="form-control" name="numeroserie" type="text" value="{{ old('numeroserie') }}" required>
                             </div>
+                            <div class="form-group">
+                                <label for="sexe">Prorietaire*</label>
+                                <select id="sexe" class="form-control selectpicker" name="prorietaire" required>
+                                    <option value="">--none--</option>
+
+                                </select>
+                            </div>
+
                         </div>
                         {{--<div class="form-group text-right m-b-0">--}}
                             {{--<button class="btn btn-primary waves-effect waves-light" type="submit">--}}
