@@ -18,7 +18,7 @@
                                 <label for="file-4" class="col-sm-2 control-label">Photo*</label>
 
 
-                                    <input id="file-4" class="form-control file-loading" type="file" name="picture[]" multiple data-show-caption="true">
+                                    <input id="image" class="form-control file-loading" type="file" name="picture[]" multiple data-show-caption="true">
 
 
                             </div>
@@ -101,7 +101,7 @@
                             <div class="row">
                                 <div class="col-sm-12" style="margin-top: 5px;">
                                     <div>
-                                        <img class="img-responsive" id="image" alt="--Picture--">
+                                        <img src="#" class="img-responsive" id="prev-image" alt="--Picture--">
                                     </div>
                                 </div>
                             </div>
@@ -135,24 +135,25 @@
 
     </div>
 @endsection
-@section('script')
+@section('js')
     <script type="text/javascript">
 
-        //        $(document).ready(function () {
-        //            $('#file-4').filestyle({
-        //                input: false
-        //            });
-        //        });
-        $("input[type=file]").on("change", function () {
-            $("#image").attr("src", URL.createObjectURL(this.files[0]));
-            instance = test();
+        function readImage(input){
+            if(input.files && input.files[0]){
+                var reader = new FileReader();
+                reader.onload = function(e){
+                    $('#prev-image').attr('src', e.target.result);
+                }
+                reader.readAsDataURL(input.files[0]);
+            }
+
+        }
+        $('#image').change(function(){
+            readImage(this);
         });
 
-        $(document).ready(function () {
-            $("#file-4").fileinput({
-                maxFileCount: 3
-            });
-        });
+
+
 
         $(document).ready(function () {
             // Select2
@@ -168,70 +169,5 @@
         });
 
 
-        //preview image
-        var test = function () {
-            var $image = $('#image');
-            var $previews = $('.preview');
-            $image.cropper({
-                build: function (e) {
-                    var $clone = $(this).clone();
-
-                    $clone.css({
-                        display: 'block',
-                        width: '100%',
-                        minWidth: 0,
-                        minHeight: 0,
-                        maxWidth: 'none',
-                        maxHeight: 'none'
-                    });
-
-                    $previews.css({
-                        width: '100%',
-                        overflow: 'hidden'
-                    }).html($clone);
-                },
-
-                crop: function (e) {
-                    var imageData = $(this).cropper('getImageData');
-                    var previewAspectRatio = e.width / e.height;
-//                    $("#button123").on('click', function () {
-//                        console.log($(this).cropper('getCroppedCanvas'));
-//                    });
-                    $previews.each(function () {
-                        var $preview = $(this);
-                        var previewWidth = $preview.width();
-                        var previewHeight = previewWidth / previewAspectRatio;
-                        var imageScaledRatio = e.width / previewWidth;
-
-                        $preview.height(previewHeight).find('img').css({
-                            width: imageData.naturalWidth / imageScaledRatio,
-                            height: imageData.naturalHeight / imageScaledRatio,
-                            marginLeft: -e.x / imageScaledRatio,
-                            marginTop: -e.y / imageScaledRatio
-                        });
-                    });
-                }
-            });
-            return $(this);
-        }
-        var instance = null;
-
-        // Image cropper
-        $("input[type=file]").on("change", function () {
-            $("#image").attr("src", URL.createObjectURL(this.files[0]));
-            instance = test();
-        });
-        $("#button123").on("click", function () {
-            console.log("test");
-            console.log(instance.cropper('getCroppedCanvas'));
-        });
-
-        // Cropper image.
-
-        //                $("#button123").on('click', function () {
-        //                    console.log("Esdras");
-        //                });
-        // console.log(final);
-        //            console.log($image.cropper('getCroppedCanvas'));
     </script>
 @endsection
