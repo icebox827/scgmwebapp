@@ -12,4 +12,9 @@ class VehiculeController extends Controller
         $vehicules = Vehicule::orderBy('updated_at','desc')->get();
         return view('vehicule',compact('vehicules'));
     }
+
+    public function index1()
+    {
+        return view('detaille');
+    }
 }

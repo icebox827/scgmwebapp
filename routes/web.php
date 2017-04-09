@@ -122,3 +122,16 @@ Route::get('/stati/',[
    'uses' => 'ImportController@station',
     'as' => 'stat'
 ]);
+
+
+Route::get('/registre', [
+    'uses'=>'RegistreController@index',
+    'as'=>'registre'
+
+]);
+
+Route::get('/detaille', [
+    'uses'=>'VehiculeController@index1',
+    'as'=>'detaille'
+
+]);
