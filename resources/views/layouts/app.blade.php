@@ -130,7 +130,17 @@
                         </li>
 
                         <li>
-                            <a href="{{route('registraire')}}" class="waves-effect"><i class="zmdi zmdi-plus-circle"></i><span> Registre </span></a>
+                            <a href="#" class="waves-effect"><i class="zmdi zmdi-plus-circle"></i><span> Registraire </span></a>
+                            <ul>
+                                <li>
+                                    <a href="{{route('registraire')}}" class="waves-effect"><i class="zmdi zmdi-plus-circle"></i><span>Nouveau Enregistrement </span></a>
+                                </li>
+                                <li>
+                                    <a href="{{route('registre')}}" class="waves-effect"><i class="zmdi zmdi-plus-circle"></i><span>Affichage du registre </span></a>
+                                </li>
+
+                            </ul>
+
 
                         </li>
 

@@ -43,6 +43,9 @@
     <link href="{{URL::to('assets/plugins/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css')}}" rel="stylesheet">
     <link href="{{URL::to('assets/plugins/bootstrap-daterangepicker/daterangepicker.css')}}" rel="stylesheet">
 
+    <!-- X-editable css -->
+    <link type="text/css" href="{{URL::to('assets/plugins/x-editable/dist/bootstrap3-editable/css/bootstrap-editable.css')}}" rel="stylesheet">
+
 
     <!-- HTML5 Shiv and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->

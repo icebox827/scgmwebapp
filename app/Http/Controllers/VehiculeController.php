@@ -10,4 +10,9 @@ class VehiculeController extends Controller
     {
         return view('vehicule');
     }
+
+    public function index1()
+    {
+        return view('detaille');
+    }
 }
