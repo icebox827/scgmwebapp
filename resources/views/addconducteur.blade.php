@@ -18,7 +18,7 @@
                                 <label for="file-4" class="col-sm-2 control-label">Photo*</label>
 
 
-                                    <input id="file-4" class="form-control file-loading" type="file" name="picture[]" multiple data-show-caption="true">
+                                    <input id="image" class="form-control file-loading" type="file" name="picture[]" multiple data-show-caption="true">
 
 
                             </div>
@@ -108,7 +108,7 @@
                             <div class="row">
                                 <div class="col-sm-12" style="margin-top: 5px;">
                                     <div>
-                                        <img class="img-responsive" id="image" alt="--Picture--">
+                                        <img src="#" class="img-responsive" id="prev-image" alt="--Picture--">
                                     </div>
                                 </div>
                             </div>
@@ -142,18 +142,42 @@
 
     </div>
 @endsection
-@section('script')
+@section('js')
     <script type="text/javascript">
         function readURL(input) {
             if (input.files && input.files[0]) {
                 var reader = new FileReader();
 
-                reader.onload = function (e) {
-                    $('#images').attr('src', e.target.result);
+        function readImage(input){
+            if(input.files && input.files[0]){
+                var reader = new FileReader();
+                reader.onload = function(e){
+                    $('#prev-image').attr('src', e.target.result);
                 }
-
                 reader.readAsDataURL(input.files[0]);
             }
+
         }
+        $('#image').change(function(){
+            readImage(this);
+        });
+
+
+
+
+        $(document).ready(function () {
+            // Select2
+            $(".selectpicker").selectpicker();
+            jQuery('#datepicker-autoclose').datepicker({
+                autoclose: true,
+                todayHighlight: true
+            });
+//            //////////////////////////
+        });
+        jQuery(function ($) {
+            $('.autonumber').autoNumeric('init');
+        });
+
+
     </script>
 @endsection
