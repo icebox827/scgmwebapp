@@ -3,7 +3,7 @@
     Detaille sur :
 @endsection
 @section('content')
-    <div class="content-page">
+
         <!-- Start content -->
         <div class="content">
             <div class="container">
@@ -18,7 +18,7 @@
                                         <div class="form-group">
                                             <label class="col-sm-5 control-label">Marque</label>
                                             <div class="col-sm-7">
-                                                <a href="#" id="inline-username" data-type="text" data-pk="1" data-title="Enter username">superuser</a>
+                                                <a href="#" id="inline-username" data-type="text" data-pk="1" data-title="Enter username">{{ $vehicule->marque }}</a>
                                             </div>
                                         </div>
                                         <div class="form-group">
@@ -320,7 +320,7 @@
 
             </div> <!-- container -->
 
-        </div> <!-- content -->
+
 @endsection
 @section('js')
 

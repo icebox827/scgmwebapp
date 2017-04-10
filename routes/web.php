@@ -130,8 +130,8 @@ Route::get('/registre', [
 
 ]);
 
-Route::get('/detaille', [
-    'uses'=>'VehiculeController@index1',
+Route::get('/detaille/{id?}', [
+    'uses'=>'VehiculeController@details',
     'as'=>'detaille'
 
 ]);

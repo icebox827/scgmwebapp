@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Proprietaire;
 use App\Vehicule;
 use Illuminate\Http\Request;
 
@@ -13,8 +14,10 @@ class VehiculeController extends Controller
         return view('vehicule',compact('vehicules'));
     }
 
-    public function index1()
+    public function details($id)
     {
-        return view('detaille');
+        $vehicule = Vehicule::find($id);
+        $proprietaire = Proprietaire::find($vehicule->proprietaire_id);
+        return view('detaille',compact('vehicule','proprietaire'));
     }
 }
