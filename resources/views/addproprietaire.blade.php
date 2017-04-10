@@ -20,11 +20,21 @@
                                 <label for="nom">Nom*</label>
 
                                 <input id="name" class="form-control" name="name" type="text" value="{{ old('name') }}" required>
+                                @if ($errors->has('name'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('name') }}</strong>
+                                    </span>
+                                @endif
 
                             </div>
                             <div class="form-group">
                                 <label for="prenom">Prenom*</label>
                                 <input  id ="lastname" class="form-control" name="prenom" type="text" value="{{ old('prenom') }}" required>
+                                @if ($errors->has('prenom'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('prenom') }}</strong>
+                                    </span>
+                                @endif
                             </div>
 
 
@@ -40,11 +50,22 @@
                                             <span class="input-group-addon bg-custom b-0 text-white"><i
                                                         class="fa fa-calendar"></i></span>
                                 </div>
+                                @if ($errors->has('birthdate'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('birthdate') }}</strong>
+                                    </span>
+                                @endif
 
                             </div>
                             <div class="form-group">
                                 <label for="lnaissance">Lieu de Naissance*</label>
                                 <input id="lnaissance" class="form-control"  name="lnaissance" type="text" value="{{ old('lnaissance') }}" required>
+                                @if ($errors->has('lnaissance'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('lnaissance') }}</strong>
+                                    </span>
+                                @endif
+
                             </div>
                             <div class="form-group">
                                 <label for="sexe">Sexe*</label>
@@ -53,27 +74,57 @@
                                     <option {{ old('sex') == 'masculin' ? 'selected' : '' }} value="Masculin">Masculin</option>
                                     <option {{ old('sex') == 'feminin' ? 'selected' : '' }} value="Feminin">Feminin</option>
                                 </select>
+                                @if ($errors->has('sex'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('sex') }}</strong>
+                                    </span>
+                                @endif
                             </div>
                             <div class="form-group">
                                 <label for="cin">CIN*</label>
                                 <input id="cin" class="form-control"  name="cin" type="text" value="{{ old('cin') }}" required>
+                                @if ($errors->has('cin'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('cin') }}</strong>
+                                    </span>
+                                @endif
                             </div>
                             <div class="form-group">
                                 <label for="nif">NIF*</label>
                                 <input id="nif" class="form-control"  name="nif" type="text" value="{{ old('nif') }}" required>
+                                @if ($errors->has('nif'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('nif') }}</strong>
+                                    </span>
+                                @endif
                             </div>
                             <div class="form-group">
                                 <label for="permis">Permis de Conduire*</label>
                                 <input id="permis" class="form-control"  name="permis" type="text" value="{{ old('permis') }}" required>
+                                @if ($errors->has('permis'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('codestation') }}</strong>
+                                    </span>
+                                @endif
                             </div>
 
                             <div class="form-group">
                                 <label for="tel">Telephone*</label>
                                 <input id="tel" class="form-control"  name="tel" type="text" value="{{ old('tel') }}" required>
+                                @if ($errors->has('tel'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('tel') }}</strong>
+                                    </span>
+                                @endif
                             </div>
                             <div class="form-group">
                                 <label for="adresse">Adresse*</label>
                                 <input id="adresse" class="form-control"  name="adresse" type="text" value="{{ old('adresse') }}" required>
+                                @if ($errors->has('adresse'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('adresse') }}</strong>
+                                    </span>
+                                @endif
                             </div>
                             <div class="form-group">
                                 <label for="sexe">Commune*</label>
@@ -82,6 +133,11 @@
                                     <option value="{{ $c->id }}">{{ $c->name }}</option>
                                     @endforeach
                                 </select>
+                                @if ($errors->has('commune'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('commune') }}</strong>
+                                    </span>
+                                @endif
                             </div>
                         </div>
 
@@ -93,36 +149,6 @@
                                 {{--Annuler--}}
                             {{--</button>--}}
                         {{--</div>--}}
-                    </div>
-
-
-                    <div class="col-lg-6">
-
-                        <div class="card-box">
-                            <h4 class="m-t-0 header-title"><b>Preview</b></h4>
-
-                            <div class="row">
-                                <div class="col-sm-6">
-                                    <div class="preview"></div>
-                                </div>
-
-                                <div class="col-sm-4">
-                                    <div class="preview"></div>
-                                </div>
-
-                                <div class="col-sm-2">
-                                    <div class="preview"></div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-sm-12" style="margin-top: 5px;">
-                                    <div>
-                                        <img class="img-responsive" id="image" alt="--Picture--">
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
                     </div>
                     <div class="row">
                         <div class="col-lg-12">
