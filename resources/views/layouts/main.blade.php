@@ -138,6 +138,10 @@
 <script src="{{URL::to('assets/plugins/raphael/raphael-min.js')}}"></script>
 <script src="{{URL::to('assets/pages/jquery.morris.init.js')}}"></script>
 
+<script src="{{URL::to('assets/plugins/moment/moment.js')}}"></script>
+<script type="text/javascript" src="{{URL::to('assets/plugins/x-editable/dist/bootstrap3-editable/js/bootstrap-editable.min.js')}}"></script>
+<script type="text/javascript" src="{{URL::to('assets/pages/jquery.xeditable.js')}}"></script>
+
 
 
 
