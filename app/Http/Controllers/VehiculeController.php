@@ -27,4 +27,8 @@ class VehiculeController extends Controller
         $station = Station::find($conducteur->station_id);
         return view('detaille',compact('vehicule','proprietaire','conducteur','station'));
     }
+
+    public function qrcode($id){
+
+    }
 }

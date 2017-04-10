@@ -13,9 +13,9 @@ class Vehicule extends Model
     public function proprietaire(){
         return $this->belongsTo(Proprietaire::class);
     }
-    public function conducteur(){
+    public function conducteur($id){
         $proprietaire = $this->proprietaire_id;
-        $conducteur = Conducteur::where('proprietaire_id',$proprietaire)->first();
+        $conducteur = Conducteur::where('vehicule_id',$id)->first();
         return $conducteur;
     }
 }

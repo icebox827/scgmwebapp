@@ -99,17 +99,17 @@
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    @foreach($vehicule as $m)
-                                    <tr>
-                                        <th scope="row">{{ $m->id }}</th>
-                                        <td>{{ $m->nummoteur }}</td>
-                                        <td>{{ $m->proprietaire->nom }} {{ $m->proprietaire->prenom  }}</td>
-                                        <td>{{ $m->conducteur()->nom }} {{ $m->conducteur()->prenom }}</td>
-                                        <td>{{ $m->conducteur()->commune->departement->name }}</td>
-                                        <td>{{ $m->conducteur()->commune->name }}</td>
-                                        <td>{{  $m->conducteur()->station->station }}</td>
-                                    </tr>
-                                    @endforeach
+                                    {{--@foreach($vehicule as $m)--}}
+                                    {{--<tr>--}}
+                                        {{--<th scope="row">{{ $m->id }}</th>--}}
+                                        {{--<td>{{ $m->nummoteur }}</td>--}}
+                                        {{--<td>{{ $m->proprietaire->nom }} {{ $m->proprietaire->prenom  }}</td>--}}
+                                        {{--<td>{{ $m->conducteur()->nom }} {{ $m->conducteur()->prenom }}</td>--}}
+                                        {{--<td>{{ $m->conducteur()->commune->departement->name }}</td>--}}
+                                        {{--<td>{{ $m->conducteur()->commune->name }}</td>--}}
+                                        {{--<td>{{  $m->conducteur()->station->station }}</td>--}}
+                                    {{--</tr>--}}
+                                    {{--@endforeach--}}
                                     </tbody>
                                 </table>
                             </div>

@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('pagetitle')
-    Detaille sur :
+    Detaille sur : {{ $vehicule->nummoteur }} - Immatriculation : {{ $vehicule->immatriculation }}
 @endsection
 @section('content')
 
@@ -14,8 +14,15 @@
                             <div class="row">
                                 <div class="col-lg-4">
                                     <h4 class="m-b-30 m-t-0 header-title"><b>QR Code</b></h4>
-                                    {!! QrCode::size(300)->color(0,110,193)->generate($vehicule->nummoteur); !!}
+                                    <img src="data:image/png;base64, {!! base64_encode(QrCode::format('png')->color(109,181,237)->size(320)->merge('/public/assets/logopnh.png',.2)->generate($vehicule)) !!} ">
                                     {{--<img class="img-responsive" src="{!!$QrCode::format('png')->generate($vehicule->nummoteur)!!}"/>--}}
+                                    <div class="text-left" style="margin-top: 10px;">
+                                        <button href="{{ route('qr.download') }}/{{ $vehicule->id }}" class="btn btn-ico waves-effect waves-light btn-info m-b-5">
+                                            <i class="fa fa-download">
+                                                <span>Telecharger</span>
+                                            </i>
+                                        </button>
+                                    </div>
                                 </div>
 
                                 <div class="col-lg-4">
@@ -215,7 +222,11 @@
                                         <div class="form-group">
                                             <label class="col-sm-5 control-label">Adresse</label>
                                             <div class="col-sm-7">
-                                                <a href="#" id="comments" data-type="textarea" data-pk="1" data-placeholder="Your comments here..." data-title="Enter comments">{{ $conducteur->commune->name }}</a>
+                                                <a href="#" id="comments" data-type="textarea" data-pk="1" data-placeholder="Your comments here..." data-title="Enter comments">
+                                                    @if($conducteur->commune)
+                                                    {{ $conducteur->commune->name }}
+                                                        @endif
+                                                </a>
                                             </div>
                                         </div>
                                     </form>

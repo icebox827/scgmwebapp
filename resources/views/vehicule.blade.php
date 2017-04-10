@@ -62,7 +62,11 @@
                                 <td>{{ $v->nummoteur }}</td>
                                 <td>{{ $v->numserie }}</td>
                                 <td>{{ $v->proprietaire->nif }}</td>
-                                <td>{{ $v->conducteur()->nif }}</td>
+                                <td>
+                                    @if($v->conducteur($v->id))
+                                    {{ $v->conducteur($v->id)->nif }}
+                                    @endif
+                                </td>
                                 <td>
                                     <a href="{{ route('detaille') }}/{{ $v->id }}" class="btn btn-icon waves-effect waves-light btn-info m-b-5"><i class="fa fa-eye" ></i></a>
                                     <a href="#" class="btn btn-icon waves-effect waves-light btn-success m-b-5"><i class="fa fa-qrcode" ></i></a>
