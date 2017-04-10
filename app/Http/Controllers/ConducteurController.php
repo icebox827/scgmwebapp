@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Commune;
 use App\Conducteur;
+use App\Reference;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
@@ -73,6 +74,12 @@ class ConducteurController extends Controller
             $conducteur->commune_id = $request->commune;
             $conducteur->nif = $request->nif;
             $conducteur->save();
+
+            $reference1 = Reference::find($request->reference1);
+            $reference2 = Reference::find($request->reference2);
+
+            $conducteur->references()->attach($reference1);
+            $conducteur->references()->attach($reference2);
             return redirect()->route('conducteur');
         }
     }

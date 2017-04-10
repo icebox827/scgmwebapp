@@ -31,7 +31,8 @@ class HomeController extends Controller
         $p = Proprietaire::all()->count();
         $c = Conducteur::all()->count();
         $s = Station::all()->count();
-        return view('home',compact('v','p','c','s'));
+        $vehicule = Vehicule::orderBy('created_at','desc')->take(10)->get();
+        return view('home',compact('v','p','c','s','vehicule'));
     }
 
 
