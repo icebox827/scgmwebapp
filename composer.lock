@@ -4,7 +4,9 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "e6b7044fff8da480f1b7eb8d6aef6ecf",
+
+    "hash": "ea5c9d32921ec07badbeea5045255d72",
+    "content-hash": "65712321fb544b6d3c8afd29f5f167ba",
     "packages": [
         {
             "name": "arrilot/laravel-widgets",
@@ -987,7 +989,9 @@
                 "framework",
                 "laravel"
             ],
+
             "time": "2017-04-03T13:07:39+00:00"
+
         },
         {
             "name": "laravel/tinker",
@@ -1355,6 +1359,57 @@
                 "php"
             ],
             "time": "2017-03-05T18:23:57+00:00"
+        },
+        {
+            "name": "orangehill/iseed",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/orangehill/iseed.git",
+                "reference": "3f0322c0243bee94d3b0c1975aab0a85f5973123"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/orangehill/iseed/zipball/3f0322c0243bee94d3b0c1975aab0a85f5973123",
+                "reference": "3f0322c0243bee94d3b0c1975aab0a85f5973123",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "^5.3.8",
+                "php": ">=5.4.0"
+            },
+            "require-dev": {
+                "illuminate/filesystem": "5.x",
+                "laravel/framework": "^5.3.8",
+                "mockery/mockery": "dev-master"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Orangehill\\Iseed": "src/"
+                },
+                "classmap": [
+                    "src/Orangehill/Iseed/Exceptions.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-2-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Tihomir Opacic",
+                    "email": "tihomir.opacic@orangehilldev.com"
+                }
+            ],
+            "description": "Generate a new Laravel database seed file based on data from the existing database table.",
+            "keywords": [
+                "artisan",
+                "generators",
+                "laravel",
+                "seed"
+            ],
+            "time": "2017-01-25 13:49:50"
         },
         {
             "name": "paragonie/random_compat",
@@ -1771,7 +1826,8 @@
             ],
             "description": "Symfony Console Component",
             "homepage": "https://symfony.com",
-            "time": "2017-04-04T14:33:42+00:00"
+
+            "time": "2017-04-04 14:33:42"
         },
         {
             "name": "symfony/css-selector",
@@ -1881,7 +1937,8 @@
             ],
             "description": "Symfony Debug Component",
             "homepage": "https://symfony.com",
-            "time": "2017-03-28T21:38:24+00:00"
+
+            "time": "2017-03-28 21:38:24"
         },
         {
             "name": "symfony/event-dispatcher",
@@ -1941,7 +1998,8 @@
             ],
             "description": "Symfony EventDispatcher Component",
             "homepage": "https://symfony.com",
-            "time": "2017-04-04T07:26:27+00:00"
+
+            "time": "2017-04-04 07:26:27"
         },
         {
             "name": "symfony/finder",
@@ -1990,7 +2048,8 @@
             ],
             "description": "Symfony Finder Component",
             "homepage": "https://symfony.com",
-            "time": "2017-03-20T09:32:19+00:00"
+
+            "time": "2017-03-20 09:32:19"
         },
         {
             "name": "symfony/http-foundation",
@@ -2043,7 +2102,9 @@
             ],
             "description": "Symfony HttpFoundation Component",
             "homepage": "https://symfony.com",
-            "time": "2017-04-04T15:30:56+00:00"
+
+            "time": "2017-04-04 15:30:56"
+
         },
         {
             "name": "symfony/http-kernel",
@@ -2125,7 +2186,9 @@
             ],
             "description": "Symfony HttpKernel Component",
             "homepage": "https://symfony.com",
-            "time": "2017-04-05T12:52:03+00:00"
+
+            "time": "2017-04-05 12:52:03"
+
         },
         {
             "name": "symfony/polyfill-mbstring",
@@ -2233,7 +2296,9 @@
             ],
             "description": "Symfony Process Component",
             "homepage": "https://symfony.com",
-            "time": "2017-03-27T18:07:02+00:00"
+
+            "time": "2017-03-27 18:07:02"
+
         },
         {
             "name": "symfony/routing",
@@ -2372,7 +2437,9 @@
             ],
             "description": "Symfony Translation Component",
             "homepage": "https://symfony.com",
-            "time": "2017-03-21T21:44:32+00:00"
+
+            "time": "2017-03-21 21:44:32"
+
         },
         {
             "name": "symfony/var-dumper",
@@ -2438,7 +2505,8 @@
                 "debug",
                 "dump"
             ],
-            "time": "2017-03-12T16:07:05+00:00"
+
+            "time": "2017-03-12 16:07:05"
         },
         {
             "name": "tcg/voyager",
@@ -2495,7 +2563,8 @@
                 "laravel",
                 "panel"
             ],
-            "time": "2017-04-06T19:57:14+00:00"
+
+            "time": "2017-04-06 19:57:14"
         },
         {
             "name": "tijsverkoyen/css-to-inline-styles",
@@ -3120,7 +3189,8 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2017-04-02T07:44:40+00:00"
+
+            "time": "2017-04-02 07:44:40"
         },
         {
             "name": "phpunit/php-file-iterator",
@@ -3388,7 +3458,8 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2017-04-03T02:22:27+00:00"
+
+            "time": "2017-04-03 02:22:27"
         },
         {
             "name": "phpunit/phpunit-mock-objects",
@@ -4015,7 +4086,8 @@
             ],
             "description": "Symfony Yaml Component",
             "homepage": "https://symfony.com",
-            "time": "2017-03-20T09:45:15+00:00"
+
+            "time": "2017-03-20 09:45:15"
         },
         {
             "name": "webmozart/assert",
@@ -4168,7 +4240,9 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "orangehill/iseed": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {

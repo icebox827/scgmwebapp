@@ -50,6 +50,8 @@ Route::get('/addconducteur',[
     'as' => 'addconducteur'
 ]);
 
+
+
 Route::get('/addproprietaire',[
     'uses' =>'AddproprietaireController@index',
     'as' => 'addproprietaire'
@@ -58,9 +60,13 @@ Route::get('/addproprietaire',[
 Route::get('/proprietaire',[
     'uses'=>'ProprietaireController@index',
     'as'=>'proprietaire'
-
-
 ]);
+Route::post('/proprietaire-save',[
+    'uses' => 'ProprietaireController@save',
+    'as' => 'proprietaire.save'
+]);
+
+
 
 Route::get('/station',[
     'uses'=>'StationController@index',
@@ -80,6 +86,10 @@ Route::get('/reference', [
 
 ]);
 
+Route::post('/reference-save',[
+    'uses'=>'ReferenceController@save',
+    'as'=>'reference.save'
+]);
 Route::get('/addreference', [
     'uses'=>'AddreferenceController@index',
     'as'=>'addreference'
@@ -98,8 +108,30 @@ Route::get('/conducteur', [
 
 ]);
 
+Route::post('/conducteur-save',[
+    'uses'=>'ConducteurController@save',
+    'as'=>'conducteur.save'
+]);
 Route::get('/vehicule', [
     'uses'=>'VehiculeController@index',
     'as'=>'vehicule'
+
+]);
+
+Route::get('/stati/',[
+   'uses' => 'ImportController@station',
+    'as' => 'stat'
+]);
+
+
+Route::get('/registre', [
+    'uses'=>'RegistreController@index',
+    'as'=>'registre'
+
+]);
+
+Route::get('/detaille', [
+    'uses'=>'VehiculeController@index1',
+    'as'=>'detaille'
 
 ]);

@@ -9,7 +9,7 @@
 
             <!-- LOGO -->
             <div class="topbar-left">
-                <a href="index.html" class="logo"><span>SCGM<span>pnh</span></span><i class="zmdi zmdi-layers"></i></a>
+                <a href="{{route('dashboard')}}" class="logo"><span>SCGM<span>pnh</span></span><i class="zmdi zmdi-layers"></i></a>
             </div>
 
             <!-- Button mobile view to collapse sidebar menu -->
@@ -69,10 +69,16 @@
                 <!-- User -->
                 <div class="user-box">
                     <div class="user-img">
-                        <img src="assets/images/users/index.jpeg" alt="user-img" title="Mat Helme" class="img-circle img-thumbnail img-responsive">
+                        <img src="{{ URL::to('assets/images/users/pnh.png') }}" alt="user-img" title="Mat Helme" class="img-circle img-thumbnail img-responsive">
                         <div class="user-status offline"><i class="zmdi zmdi-dot-circle"></i></div>
                     </div>
-                    <h5><a href="#">Police Nationale D'Haiti</a> </h5>
+                    <h5><a href="#">
+                            @if(Auth::check())
+                                {{ Auth::user()->name }}
+                                @else
+                                Jhon Doe
+                            @endif
+                        </a> </h5>
                     <ul class="list-inline">
                         <li>
                             <a href="#" >
@@ -96,7 +102,7 @@
                         <li class="text-muted menu-title">Navigation</li>
 
                         <li>
-                            <a href="{{route('home')}}" class="waves-effect"><i class="zmdi zmdi-view-dashboard"></i> <span> Tableau de Bor-SCGM </span> </a>
+                            <a href="{{route('home')}}" class="waves-effect"><i class="zmdi zmdi-view-dashboard"></i> <span> Tableau de Bord-SCGM </span> </a>
                         </li>
 
                         <li>
@@ -124,7 +130,17 @@
                         </li>
 
                         <li>
-                            <a href="{{route('registraire')}}" class="waves-effect"><i class="zmdi zmdi-plus-circle"></i><span> Registre </span></a>
+                            <a href="#" class="waves-effect"><i class="zmdi zmdi-plus-circle"></i><span> Registraire </span></a>
+                            <ul>
+                                <li>
+                                    <a href="{{route('registraire')}}" class="waves-effect"><i class="zmdi zmdi-plus-circle"></i><span>Nouveau Enregistrement </span></a>
+                                </li>
+                                <li>
+                                    <a href="{{route('registre')}}" class="waves-effect"><i class="zmdi zmdi-plus-circle"></i><span>Affichage du registre </span></a>
+                                </li>
+
+                            </ul>
+
 
                         </li>
 
@@ -165,77 +181,8 @@
 
 
         <!-- Right Sidebar -->
-        <div class="side-bar right-bar">
-            <a href="javascript:void(0);" class="right-bar-toggle">
-                <i class="zmdi zmdi-close-circle-o"></i>
-            </a>
-            <h4 class="">T`H`E`M`E`L`O`C`K`.`C`O`M`</h4>
-            <div class="notification-list nicescroll">
-                <ul class="list-group list-no-border user-list">
-                    <li class="list-group-item">
-                        <a href="#" class="user-list-item">
-                            <div class="avatar">
-                                <img src="assets/images/users/avatar-2.jpg" alt="">
-                            </div>
-                            <div class="user-desc">
-                                <span class="name">Michael Zenaty</span>
-                                <span class="desc">There are new settings available</span>
-                                <span class="time">2 hours ago</span>
-                            </div>
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="#" class="user-list-item">
-                            <div class="icon bg-info">
-                                <i class="zmdi zmdi-account"></i>
-                            </div>
-                            <div class="user-desc">
-                                <span class="name">New Signup</span>
-                                <span class="desc">There are new settings available</span>
-                                <span class="time">5 hours ago</span>
-                            </div>
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="#" class="user-list-item">
-                            <div class="icon bg-pink">
-                                <i class="zmdi zmdi-comment"></i>
-                            </div>
-                            <div class="user-desc">
-                                <span class="name">New Message received</span>
-                                <span class="desc">There are new settings available</span>
-                                <span class="time">1 day ago</span>
-                            </div>
-                        </a>
-                    </li>
-                    <li class="list-group-item active">
-                        <a href="#" class="user-list-item">
-                            <div class="avatar">
-                                <img src="assets/images/users/avatar-3.jpg" alt="">
-                            </div>
-                            <div class="user-desc">
-                                <span class="name">James Anderson</span>
-                                <span class="desc">There are new settings available</span>
-                                <span class="time">2 days ago</span>
-                            </div>
-                        </a>
-                    </li>
-                    <li class="list-group-item active">
-                        <a href="#" class="user-list-item">
-                            <div class="icon bg-warning">
-                                <i class="zmdi zmdi-settings"></i>
-                            </div>
-                            <div class="user-desc">
-                                <span class="name">Settings</span>
-                                <span class="desc">There are new settings available</span>
-                                <span class="time">1 day ago</span>
-                            </div>
-                        </a>
-                    </li>
 
-                </ul>
-            </div>
-        </div>
+
         <!-- /Right-bar -->
 
     </div>

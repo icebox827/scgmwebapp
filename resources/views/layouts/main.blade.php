@@ -13,6 +13,8 @@
     <!-- App title -->
     <title>SGCM Admin</title>
 
+    <link rel="stylesheet" href="{{ URL::to('assets/plugins/morris/morris.css') }}">
+
     <!-- App CSS -->
     <link href="{{ URL::to('assets/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
     <link href="{{ URL::to('assets/css/core.css') }}" rel="stylesheet" type="text/css" />
@@ -40,6 +42,9 @@
     <link href="{{URL::to('assets/plugins/mjolnic-bootstrap-colorpicker/dist/css/bootstrap-colorpicker.min.css')}}" rel="stylesheet">
     <link href="{{URL::to('assets/plugins/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css')}}" rel="stylesheet">
     <link href="{{URL::to('assets/plugins/bootstrap-daterangepicker/daterangepicker.css')}}" rel="stylesheet">
+
+    <!-- X-editable css -->
+    <link type="text/css" href="{{URL::to('assets/plugins/x-editable/dist/bootstrap3-editable/css/bootstrap-editable.css')}}" rel="stylesheet">
 
 
     <!-- HTML5 Shiv and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -80,25 +85,7 @@
 <script src="{{ URL::to('assets/js/wow.min.js') }}"></script>
 <script src="{{ URL::to('assets/js/jquery.nicescroll.js') }}"></script>
 <script src="{{ URL::to('assets/js/jquery.scrollTo.min.js') }}"></script>
-
-<!-- App js -->
-<script src="{{ URL::to('assets/js/jquery.core.js') }}"></script>
-<script src="{{ URL::to('assets/js/jquery.app.js') }}"></script>
-
-<!-- Counter Up  -->
-<script src="{{URL::to('assets/plugins/waypoints/lib/jquery.waypoints.js')}}"></script>
-<script src="{{URL::to('assets/plugins/counterup/jquery.counterup.min.js')}}"></script>
-
-<!-- KNOB JS -->
-<!--[if IE]>
-<script type="text/javascript" src="assets/plugins/jquery-knob/excanvas.js"></script>
-<![endif]-->
-<script src="assets/plugins/jquery-knob/jquery.knob.js"></script>
-<!--Morris Chart-->
-<script src="{{URL::to('assets/plugins/morris/morris.min.js')}}"></script>
-<script src="{{URL::to('assets/plugins/raphael/raphael-min.js')}}"></script>
-<script src="{{URL::to('assets/pages/jquery.morris.init.js')}}}"></script>
-
+@yield('js')
 
 !-- Datatables-->
 <script src="{{URL::to('assets/plugins/datatables/jquery.dataTables.min.js')}}"></script>
@@ -131,7 +118,32 @@
 <script src="{{URL::to('assets/plugins/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js')}}"></script>
 <script src="{{URL::to('assets/plugins/bootstrap-daterangepicker/daterangepicker.js')}}"></script>
 <script src="{{URL::to('assets/plugins/bootstrap-maxlength/bootstrap-maxlength.min.js')}}" type="text/javascript"></script>
-{{URL::to('')}}
+<script type="text/javascript" src="{{URL::to('assets/js/jquery.uploadPreview.min.js')}}"></script>
+<script src="{{ URL::to('assets/plugins/bootstrap-filestyle/src/bootstrap-filestyle.min.js') }}" type="text/javascript"></script>
+<!-- App js -->
+<script src="{{ URL::to('assets/js/jquery.core.js') }}"></script>
+<script src="{{ URL::to('assets/js/jquery.app.js') }}"></script>
+
+<!-- Counter Up  -->
+<script src="{{URL::to('assets/plugins/waypoints/lib/jquery.waypoints.js')}}"></script>
+<script src="{{URL::to('assets/plugins/counterup/jquery.counterup.min.js')}}"></script>
+
+<!-- KNOB JS -->
+<!--[if IE]>
+<script type="text/javascript" src="assets/plugins/jquery-knob/excanvas.js"></script>
+<![endif]-->
+<script src="assets/plugins/jquery-knob/jquery.knob.js"></script>
+<!--Morris Chart-->
+<script src="{{URL::to('assets/plugins/morris/morris.min.js')}}"></script>
+<script src="{{URL::to('assets/plugins/raphael/raphael-min.js')}}"></script>
+<script src="{{URL::to('assets/pages/jquery.morris.init.js')}}"></script>
+
+<script src="{{URL::to('assets/plugins/moment/moment.js')}}"></script>
+<script type="text/javascript" src="{{URL::to('assets/plugins/x-editable/dist/bootstrap3-editable/js/bootstrap-editable.min.js')}}"></script>
+<script type="text/javascript" src="{{URL::to('assets/pages/jquery.xeditable.js')}}"></script>
+
+
+
 
 <!-- Datatable init js -->
 <script src="assets/pages/datatables.init.js"></script>

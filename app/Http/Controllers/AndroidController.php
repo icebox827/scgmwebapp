@@ -2,36 +2,65 @@
 
 namespace App\Http\Controllers;
 
+use App\Commune;
+use App\Conducteur;
+use App\Departement;
+use App\Proprietaire;
+use App\Station;
+use App\Vehicule;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\URL;
 
 class AndroidController extends Controller
 {
     public function get($id){
-        $vehicule = DB::table('vehicule')->where('numMoteur',$id)->first();
+
+        $vehicule = Vehicule::where('nummoteur',$id)->first();
 
         $rep = array();
 
         $v = new \stdClass();
-        $v->numMoteur = $vehicule->numMoteur;
-        $v->numSerie = $vehicule-> numSerie;
+        $v->numMoteur = $vehicule->nummoteur;
+        $v->numSerie = $vehicule-> numserie;
         $v->marque = $vehicule->marque;
         $v->annee = $vehicule->annee;
         $v->couleur = $vehicule->couleur;
         $v->immatriculation =$vehicule->immatriculation;
-        $v->proprietaires_nif = $vehicule->proprietaires_nif;
+//        $v->proprietaires_nif = $vehicule->proprietaire->nif;
 
         array_push($rep,$v);
-        $proprio = DB::table('proprietaire')->where('nif','001-821-449-4')->first();
+        $proprio = Proprietaire::find($vehicule->proprietaire->id);
 
         array_push($rep, $proprio);
-        $conducteur = DB::table('conducteur')->where('vehicule_numMoteur',$vehicule->numMoteur)->first();
+        $conducteur = Conducteur::where('proprietaire_id',$proprio->id)->first();
+        $c = new \stdClass();
+        $c->nif = $conducteur->nif;
+        $c->nom = $conducteur->nom;
+        $c->prenom = $conducteur->prenom;
+        $c->datenaissance = $conducteur->datenaissance;
+        $c->image = URL::to('storage/')."/".$conducteur->photo;
+        $c->lieunaissance = $conducteur->lieunaissance;
+        $c->sexe = $conducteur->sexe;
+        $c->permisconduire = $conducteur->permisconduire;
+        $c->matricule = $conducteur->matricule;
+        $c->numero = $conducteur->numero;
+        $c->rue = $conducteur->rue;
+        $c->quartier = $conducteur->quartier;
+        $c->telephone = $conducteur->telephone;
 
-        array_push($rep, $conducteur);
+        array_push($rep, $c);
 
-        $station  = DB::table('station')->where('idstation',$conducteur->station_idstation)->first();
+        $station  = Station::find($conducteur->station_id)->first();
+        $s = new \stdClass();
+        $s->codestation = $station->codestation;
+        $com = Commune::find($station->commune_id);
+        $s->commune = $com->name;
+        $dept = Departement::find($com->id);
+        $s->departement =$dept->name;
+        $s->station = $station->station;
 
-//        array_push($rep, $station);
+        array_push($rep, $s);
         return response()->json($rep);
 //        echo "<pre>";
 //        var_dump($vehicule);

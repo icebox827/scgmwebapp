@@ -29,6 +29,7 @@
                             <thead>
                             <tr>
                                 <th>Station</th>
+                                <th>Code Station</th>
                                 <th>Departement</th>
                                 <th>Commune</th>
 
@@ -37,14 +38,15 @@
                             </thead>
 
                             <tbody>
+                            @foreach($stations as $s)
                             <tr>
-                                <td>Tiger Nixon</td>
-                                <td>System Architect</td>
-                                <td>Edinburgh</td>
-
+                                <td>{{ $s->station }}</td>
+                                <td>{{ $s->codestation }}</td>
+                                <td>{{ $s->commune->departement->name }}</td>
+                                <td>{{ $s->commune->name }}</td>
 
                             </tr>
-
+                            @endforeach
                             </tbody>
                         </table>
                     </div>
