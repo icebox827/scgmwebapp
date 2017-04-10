@@ -50,13 +50,13 @@
                     @foreach($conducteurs as $conducteur)
                     <tr>
                         <td>{{ $conducteur->nom }}</td>
-                        <td>{{ $conducteur->prenom }}<</td>
+                        <td>{{ $conducteur->prenom }}</td>
                         <td>{{ $conducteur->datenaissance }}</td>
                         <td>{{ $conducteur->lieunaissance }}</td>
                         <td>{{ $conducteur->sexe }}</td>
                         <td>{{ $conducteur->cin }}</td>
                         <td>{{ $conducteur->nif }}</td>
-                        <td>{{ $conducteur->permiscondure }}<</td>
+                        <td>{{ $conducteur->permiscondure }}</td>
                         <td>{{ $conducteur->telephone }}</td>
                         <td>{{ $conducteur->proprietaire->nif  }}</td>
                     </tr>
