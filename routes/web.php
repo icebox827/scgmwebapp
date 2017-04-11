@@ -79,6 +79,10 @@ Route::get('/registraire', [
     'as'=>'registraire'
 
 ]);
+Route::post('/registraire-save',[
+    'uses'=>'RegistraireController@index',
+    'as'=>'registraire.save'
+]);
 
 Route::get('/reference', [
     'uses'=>'ReferenceController@index',
@@ -95,7 +99,10 @@ Route::get('/addreference', [
     'as'=>'addreference'
 
 ]);
-
+Route::get('/qrcode/{id?}',[
+   'uses' => "VehiculeController@qrcode",
+    'as' => 'qr.download'
+]);
 
 
 Route::group(['prefix' => 'admin'], function () {
@@ -134,8 +141,8 @@ Route::get('/registre', [
 
 ]);
 
-Route::get('/detaille', [
-    'uses'=>'VehiculeController@index1',
+Route::get('/detaille/{id?}', [
+    'uses'=>'VehiculeController@details',
     'as'=>'detaille'
 
 ]);

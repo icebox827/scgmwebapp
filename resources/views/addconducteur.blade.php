@@ -182,6 +182,32 @@
                                     </span>
                                 @endif
                             </div>
+                            <div class="form-group">
+                                <label for="sexe">Reference 1*</label>
+                                <select id="sexe" class="form-control select2" name="reference1" required>
+                                    @foreach($references as $p)
+                                        <option value="{{ $p->id }}">{{ $p->nom }} {{ $p->telephone }}</option>
+                                    @endforeach
+                                </select>
+                                @if ($errors->has('reference1'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('reference1') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                            <div class="form-group">
+                                <label for="sexe">Reference 2*</label>
+                                <select id="sexe" class="form-control select2" name="reference2" required>
+                                    @foreach($references as $p)
+                                        <option value="{{ $p->id }}">{{ $p->nom }} {{ $p->telephone }}</option>
+                                    @endforeach
+                                </select>
+                                @if ($errors->has('reference2'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('reference2') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
                         </div>
 
                     </div>

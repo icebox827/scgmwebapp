@@ -33,6 +33,7 @@
                 <table id="datatable-buttons" class="table table-striped table-bordered">
                     <thead>
                     <tr>
+                        <th>Photo</th>
                         <th>Nom</th>
                         <th>Prenom</th>
                         <th>Date de Naissance</th>
@@ -43,12 +44,14 @@
                         <th>Permis de Conduire</th>
                         <th>Telephone</th>
                         <th>Proprietaire</th>
+
                     </tr>
                     </thead>
 
                     <tbody>
                     @foreach($conducteurs as $conducteur)
                     <tr>
+                        <td><img src="{{ URL::to('storage/'. $conducteur->photo) }}" class="img-responsive" style="width: 100px; height: 100px;"></td>
                         <td>{{ $conducteur->nom }}</td>
                         <td>{{ $conducteur->prenom }}</td>
                         <td>{{ $conducteur->datenaissance }}</td>
@@ -59,6 +62,7 @@
                         <td>{{ $conducteur->permiscondure }}</td>
                         <td>{{ $conducteur->telephone }}</td>
                         <td>{{ $conducteur->proprietaire->nif  }}</td>
+
                     </tr>
                     @endforeach
                     </tbody>

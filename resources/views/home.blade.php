@@ -48,12 +48,12 @@
             <div class="row">
 
 
-                <div class="col-lg-12">
-                    <div class="card-box">
-                        <div class="dropdown pull-right">
-                            <a href="#" class="dropdown-toggle card-drop" data-toggle="dropdown" aria-expanded="false">
-                                <i class="zmdi zmdi-more-vert"></i>
-                            </a>
+                {{--<div class="col-lg-12">--}}
+                    {{--<div class="card-box">--}}
+                        {{--<div class="dropdown pull-right">--}}
+                            {{--<a href="#" class="dropdown-toggle card-drop" data-toggle="dropdown" aria-expanded="false">--}}
+                                {{--<i class="zmdi zmdi-more-vert"></i>--}}
+                            {{--</a>--}}
                             {{--<ul class="dropdown-menu" role="menu">--}}
                                 {{--<li><a href="#">Action</a></li>--}}
                                 {{--<li><a href="#">Another action</a></li>--}}
@@ -61,11 +61,11 @@
                                 {{--<li class="divider"></li>--}}
                                 {{--<li><a href="#">Separated link</a></li>--}}
                             {{--</ul>--}}
-                        </div>
-                        <h4 class="header-title m-t-0">Statistics</h4>
-                        <div id="morris-bar-example" style="height: 280px;"></div>
-                    </div>
-                </div><!-- end col -->
+                        {{--</div>--}}
+                        {{--<h4 class="header-title m-t-0">Statistics</h4>--}}
+                        {{--<div id="morris-bar-example" style="height: 280px;"></div>--}}
+                    {{--</div>--}}
+                {{--</div><!-- end col -->--}}
 
 
                 <div class="row">
@@ -78,7 +78,7 @@
 
                             </div>
 
-                            <h4 class="header-title m-t-0 m-b-30">Last Added</h4>
+                            <h4 class="header-title m-t-0 m-b-30">Mise a jour</h4>
 
                             <p class="text-muted font-13 m-b-25">
                                 Les dernieres Entrees
@@ -99,33 +99,17 @@
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    <tr>
-                                        <th scope="row">1</th>
-                                        <td>Table cell</td>
-                                        <td>Table cell</td>
-                                        <td>Table cell</td>
-                                        <td>Table cell</td>
-                                        <td>Table cell</td>
-                                        <td>Table cell</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">2</th>
-                                        <td>Table cell</td>
-                                        <td>Table cell</td>
-                                        <td>Table cell</td>
-                                        <td>Table cell</td>
-                                        <td>Table cell</td>
-                                        <td>Table cell</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">3</th>
-                                        <td>Table cell</td>
-                                        <td>Table cell</td>
-                                        <td>Table cell</td>
-                                        <td>Table cell</td>
-                                        <td>Table cell</td>
-                                        <td>Table cell</td>
-                                    </tr>
+                                    {{--@foreach($vehicule as $m)--}}
+                                    {{--<tr>--}}
+                                        {{--<th scope="row">{{ $m->id }}</th>--}}
+                                        {{--<td>{{ $m->nummoteur }}</td>--}}
+                                        {{--<td>{{ $m->proprietaire->nom }} {{ $m->proprietaire->prenom  }}</td>--}}
+                                        {{--<td>{{ $m->conducteur()->nom }} {{ $m->conducteur()->prenom }}</td>--}}
+                                        {{--<td>{{ $m->conducteur()->commune->departement->name }}</td>--}}
+                                        {{--<td>{{ $m->conducteur()->commune->name }}</td>--}}
+                                        {{--<td>{{  $m->conducteur()->station->station }}</td>--}}
+                                    {{--</tr>--}}
+                                    {{--@endforeach--}}
                                     </tbody>
                                 </table>
                             </div>
