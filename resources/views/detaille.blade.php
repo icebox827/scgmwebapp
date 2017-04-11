@@ -14,7 +14,7 @@
                             <div class="row">
                                 <div class="col-lg-4">
                                     <h4 class="m-b-30 m-t-0 header-title"><b>QR Code</b></h4>
-                                    <img src="data:image/png;base64, {!! base64_encode(QrCode::format('png')->color(109,181,237)->size(320)->merge('/public/assets/logopnh.png',.2)->generate($vehicule)) !!} ">
+                                    <img src="data:image/png;base64, {!! base64_encode(QrCode::format('png')->color(183,48,9)->size(320)->generate($vehicule->nummoteur)) !!} ">
                                     {{--<img class="img-responsive" src="{!!$QrCode::format('png')->generate($vehicule->nummoteur)!!}"/>--}}
                                     <div class="text-left" style="margin-top: 10px;">
                                         <button href="{{ route('qr.download') }}/{{ $vehicule->id }}" class="btn btn-ico waves-effect waves-light btn-info m-b-5">

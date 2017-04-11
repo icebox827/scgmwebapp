@@ -99,17 +99,33 @@
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    {{--@foreach($vehicule as $m)--}}
-                                    {{--<tr>--}}
-                                        {{--<th scope="row">{{ $m->id }}</th>--}}
-                                        {{--<td>{{ $m->nummoteur }}</td>--}}
-                                        {{--<td>{{ $m->proprietaire->nom }} {{ $m->proprietaire->prenom  }}</td>--}}
-                                        {{--<td>{{ $m->conducteur()->nom }} {{ $m->conducteur()->prenom }}</td>--}}
-                                        {{--<td>{{ $m->conducteur()->commune->departement->name }}</td>--}}
-                                        {{--<td>{{ $m->conducteur()->commune->name }}</td>--}}
-                                        {{--<td>{{  $m->conducteur()->station->station }}</td>--}}
-                                    {{--</tr>--}}
-                                    {{--@endforeach--}}
+                                    @foreach($vehicule as $m)
+                                    <tr>
+                                        <th scope="row">{{ $m->id }}</th>
+                                        <td>{{ $m->nummoteur }}</td>
+                                        <td>{{ $m->proprietaire->nom }} {{ $m->proprietaire->prenom  }}</td>
+                                        <td>
+                                            @if($m->conducteur($m->id))
+                                            {{ $m->conducteur($m->id)->nom }} {{ $m->conducteur($m->id)->prenom }}
+                                                @endif
+                                        </td>
+                                        <td>
+                                            @if($m->conducteur($m->id) and $m->conducteur($m->id)->commune)
+                                            {{ $m->conducteur($m->id)->commune($m->id)->departement->name }}
+                                            @endif
+                                        </td>
+                                        <td>
+                                            @if($m->conducteur($m->id) and $m->conducteur($m->id)->commune)
+                                            {{ $m->conducteur($m->id)->commune($m->id)->name }}
+                                            @endif
+                                        </td>
+                                        <td>
+                                            @if($m->conducteur($m->id))
+                                            {{  $m->conducteur($m->id)->station->station }}
+                                            @endif
+                                        </td>
+                                    </tr>
+                                    @endforeach
                                     </tbody>
                                 </table>
                             </div>

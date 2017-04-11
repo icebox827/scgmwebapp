@@ -177,20 +177,20 @@
 
                                 <label for="nom">Nom*</label>
 
-                                <input id="name" class="form-control" name="name" type="text" value="{{ old('name') }}" required>
-                                @if ($errors->has('name'))
+                                <input id="name" class="form-control" name="namep" type="text" value="{{ old('namep') }}" required>
+                                @if ($errors->has('namep'))
                                     <span class="help-block">
-                                        <strong>{{ $errors->first('name') }}</strong>
+                                        <strong>{{ $errors->first('namep') }}</strong>
                                     </span>
                                 @endif
 
                             </div>
                             <div class="form-group">
                                 <label for="prenom">Prenom*</label>
-                                <input  id ="lastname" class="form-control" name="prenom" type="text" value="{{ old('prenom') }}" required>
-                                @if ($errors->has('prenom'))
+                                <input  id ="lastname" class="form-control" name="prenomp" type="text" value="{{ old('prenomp') }}" required>
+                                @if ($errors->has('prenomp'))
                                     <span class="help-block">
-                                        <strong>{{ $errors->first('prenom') }}</strong>
+                                        <strong>{{ $errors->first('prenomp') }}</strong>
                                     </span>
                                 @endif
                             </div>
@@ -201,84 +201,84 @@
 
 
                                 <div class="input-group">
-                                    <input type="text" name="birthdate" class="form-control"
+                                    <input type="text" name="birthdatep" class="form-control"
                                            placeholder="mm/dd/yyyy"
                                            id="datepicker-autoclose"
                                            value="{{ old('birthdate') }}" required>
                                             <span class="input-group-addon bg-custom b-0 text-white"><i
                                                         class="icon-calendar"></i></span>
                                 </div>
-                                @if ($errors->has('birthdate'))
+                                @if ($errors->has('birthdatep'))
                                     <span class="help-block">
-                                        <strong>{{ $errors->first('birthdate') }}</strong>
+                                        <strong>{{ $errors->first('birthdatep') }}</strong>
                                     </span>
                                 @endif
 
                             </div>
                             <div class="form-group">
                                 <label for="lnaissance">Lieu de Naissance*</label>
-                                <input id="lnaissance" class="form-control"  name="lnaissance" type="text" value="{{ old('lnaissance') }}" required>
-                                @if ($errors->has('lnaissance'))
+                                <input id="lnaissance" class="form-control"  name="lnaissancep" type="text" value="{{ old('lnaissance') }}" required>
+                                @if ($errors->has('lnaissancep'))
                                     <span class="help-block">
-                                        <strong>{{ $errors->first('lnaissance') }}</strong>
+                                        <strong>{{ $errors->first('lnaissancep') }}</strong>
                                     </span>
                                 @endif
                             </div>
                             <div class="form-group">
                                 <label for="sexe">Sexe*</label>
-                                <select id="sexe" class="form-control selectpicker" name="sex" required>
+                                <select id="sexe" class="form-control selectpicker" name="sexp" required>
                                     <option value="">--none--</option>
                                     <option {{ old('sex') == 'masculin' ? 'selected' : '' }} value="masculin">masculin</option>
                                     <option {{ old('sex') == 'feminin' ? 'selected' : '' }} value="feminin">feminin</option>
                                 </select>
-                                @if ($errors->has('sex'))
+                                @if ($errors->has('sexp'))
                                     <span class="help-block">
-                                        <strong>{{ $errors->first('sex') }}</strong>
+                                        <strong>{{ $errors->first('sexp') }}</strong>
                                     </span>
                                 @endif
                             </div>
                             <div class="form-group">
                                 <label for="cin">CIN*</label>
-                                <input id="cin" class="form-control"  name="cin" type="text" value="{{ old('cin') }}" required>
-                                @if ($errors->has('cin'))
+                                <input id="cin" class="form-control"  name="cinp" type="text" value="{{ old('cin') }}" required>
+                                @if ($errors->has('cinp'))
                                     <span class="help-block">
-                                        <strong>{{ $errors->first('cin') }}</strong>
+                                        <strong>{{ $errors->first('cinp') }}</strong>
                                     </span>
                                 @endif
                             </div>
                             <div class="form-group">
                                 <label for="nif">NIF*</label>
-                                <input id="nif" class="form-control"  name="nif" type="text" value="{{ old('nif') }}" required>
-                                @if ($errors->has('nif'))
+                                <input id="nif" class="form-control"  name="nifp" type="text" value="{{ old('nif') }}" required>
+                                @if ($errors->has('nifp'))
                                     <span class="help-block">
-                                        <strong>{{ $errors->first('nif') }}</strong>
+                                        <strong>{{ $errors->first('nifp') }}</strong>
                                     </span>
                                 @endif
                             </div>
                             <div class="form-group">
                                 <label for="permis">Permis de Conduire*</label>
-                                <input id="permis" class="form-control"  name="permis" type="text" value="{{ old('permis') }}" required>
-                                @if ($errors->has('permis'))
+                                <input id="permis" class="form-control"  name="permisp" type="text" value="{{ old('permis') }}" required>
+                                @if ($errors->has('permisp'))
                                     <span class="help-block">
-                                        <strong>{{ $errors->first('permis') }}</strong>
+                                        <strong>{{ $errors->first('permisp') }}</strong>
                                     </span>
                                 @endif
                             </div>
                             <div class="form-group">
                                 <label for="tel">Telephone*</label>
-                                <input id="tel" class="form-control"  name="tel" type="text" value="{{ old('tel') }}" required>
-                                @if ($errors->has('tel'))
+                                <input id="tel" class="form-control"  name="telp" type="text" value="{{ old('tel') }}" required>
+                                @if ($errors->has('telp'))
                                     <span class="help-block">
-                                        <strong>{{ $errors->first('tel') }}</strong>
+                                        <strong>{{ $errors->first('telp') }}</strong>
                                     </span>
                                 @endif
                             </div>
                             <div class="form-group">
                                 <label for="adresse">Adresse*</label>
                                 <input id="adresse" class="form-control"  name="adresse" type="text" value="{{ old('adresse') }}" required>
-                                @if ($errors->has('adresse'))
+                                @if ($errors->has('adressep'))
                                     <span class="help-block">
-                                        <strong>{{ $errors->first('adresse') }}</strong>
+                                        <strong>{{ $errors->first('adressep') }}</strong>
                                     </span>
                                 @endif
                             </div>
@@ -383,38 +383,38 @@
 
                                                 <label for="nom">Nom*</label>
 
-                                                <input id="name" class="form-control" name="name" type="text" value="{{ old('name') }}" required>
-                                                @if ($errors->has('name'))
+                                                <input id="name" class="form-control" name="namer" type="text" value="{{ old('name') }}" required>
+                                                @if ($errors->has('namer'))
                                                     <span class="help-block">
-                                        <strong>{{ $errors->first('name') }}</strong>
+                                        <strong>{{ $errors->first('namer') }}</strong>
                                     </span>
                                                 @endif
 
                                             </div>
                                             <div class="form-group">
                                                 <label for="prenom">Prenom*</label>
-                                                <input  id ="lastname" class="form-control" name="prenom" type="text" value="{{ old('prenom') }}" required>
-                                                @if ($errors->has('prenom'))
+                                                <input  id ="lastname" class="form-control" name="prenomr" type="text" value="{{ old('prenom') }}" required>
+                                                @if ($errors->has('prenomr'))
                                                     <span class="help-block">
-                                        <strong>{{ $errors->first('prenom') }}</strong>
+                                        <strong>{{ $errors->first('prenomr') }}</strong>
                                     </span>
                                                 @endif
                                             </div>
                                             <div class="form-group">
                                                 <label for="adresse">Adresse*</label>
-                                                <input id="adresse" class="form-control"  name="adresse" type="text" value="{{ old('adresse') }}" required>
-                                                @if ($errors->has('adresse'))
+                                                <input id="adresse" class="form-control"  name="adresser" type="text" value="{{ old('adresse') }}" required>
+                                                @if ($errors->has('adresser'))
                                                     <span class="help-block">
-                                        <strong>{{ $errors->first('adresse') }}</strong>
+                                        <strong>{{ $errors->first('adresser') }}</strong>
                                     </span>
                                                 @endif
                                             </div>
                                             <div class="form-group">
                                                 <label for="tel">Telephone*</label>
-                                                <input id="tel" class="form-control"  name="tel" type="text" value="{{ old('tel') }}" required>
-                                                @if ($errors->has('tel'))
+                                                <input id="tel" class="form-control"  name="telr" type="text" value="{{ old('tel') }}" required>
+                                                @if ($errors->has('telr'))
                                                     <span class="help-block">
-                                        <strong>{{ $errors->first('tel') }}</strong>
+                                        <strong>{{ $errors->first('telr') }}</strong>
                                     </span>
                                                 @endif
                                             </div>
@@ -427,38 +427,38 @@
 
                                                 <label for="nom">Nom*</label>
 
-                                                <input id="name" class="form-control" name="name" type="text" value="{{ old('name') }}" required>
-                                                @if ($errors->has('name'))
+                                                <input id="name" class="form-control" name="namere" type="text" value="{{ old('name') }}" required>
+                                                @if ($errors->has('namere'))
                                                     <span class="help-block">
-                                        <strong>{{ $errors->first('name') }}</strong>
+                                        <strong>{{ $errors->first('namere') }}</strong>
                                     </span>
                                                 @endif
 
                                             </div>
                                             <div class="form-group">
                                                 <label for="prenom">Prenom*</label>
-                                                <input  id ="lastname" class="form-control" name="prenom" type="text" value="{{ old('prenom') }}" required>
-                                                @if ($errors->has('prenom'))
+                                                <input  id ="lastnamere" class="form-control" name="prenomre" type="text" value="{{ old('prenom') }}" required>
+                                                @if ($errors->has('prenomre'))
                                                     <span class="help-block">
-                                        <strong>{{ $errors->first('prenom') }}</strong>
+                                        <strong>{{ $errors->first('prenomre') }}</strong>
                                     </span>
                                                 @endif
                                             </div>
                                             <div class="form-group">
                                                 <label for="adresse">Adresse*</label>
-                                                <input id="adresse" class="form-control"  name="adresse" type="text" value="{{ old('adresse') }}" required>
-                                                @if ($errors->has('adresse'))
+                                                <input id="adresse" class="form-control"  name="adressere" type="text" value="{{ old('adresse') }}" required>
+                                                @if ($errors->has('adressere'))
                                                     <span class="help-block">
-                                        <strong>{{ $errors->first('adresse') }}</strong>
+                                        <strong>{{ $errors->first('adressere') }}</strong>
                                     </span>
                                                 @endif
                                             </div>
                                             <div class="form-group">
                                                 <label for="tel">Telephone*</label>
-                                                <input id="tel" class="form-control"  name="tel" type="text" value="{{ old('tel') }}" required>
-                                                @if ($errors->has('tel'))
+                                                <input id="tel" class="form-control"  name="telre" type="text" value="{{ old('tel') }}" required>
+                                                @if ($errors->has('telre'))
                                                     <span class="help-block">
-                                        <strong>{{ $errors->first('tel') }}</strong>
+                                        <strong>{{ $errors->first('telre') }}</strong>
                                     </span>
                                                 @endif
                                             </div>
@@ -472,29 +472,15 @@
                                     <div class="card-box">
                                         <h4>Zone de Stationnement</h4>
                                         <div class="form-group">
-                                            <label for="station">Station*</label>
-                                            <input id="station" class="form-control"  name="station" type="text" value="{{ old('station') }}" required>
-                                            @if ($errors->has('station'))
-                                                <span class="help-block">
-                                        <strong>{{ $errors->first('station') }}</strong>
-                                    </span>
-                                            @endif
-                                        </div>
-                                        <div class="form-group">
                                             <label for="codestation">Code Station*</label>
-                                            <input id="codestation" class="form-control"  name="codestation" type="text" value="{{ old('codestation') }}" required>
+                                            <select name="codestation" class="form-control select2">
+                                                @foreach($stations as $s)
+                                                    <option value="{{ $s->id }}">{{ $s->codestation }}</option>
+                                                    @endforeach
+                                            </select>
                                             @if ($errors->has('codestation'))
                                                 <span class="help-block">
                                         <strong>{{ $errors->first('codestation') }}</strong>
-                                    </span>
-                                            @endif
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="commune">Commune*</label>
-                                            <input id="commune" class="form-control"  name="commune" type="text" value="{{ old('commune') }}" required>
-                                            @if ($errors->has('commune'))
-                                                <span class="help-block">
-                                        <strong>{{ $errors->first('commune') }}</strong>
                                     </span>
                                             @endif
                                             <br/><br/><br/><br/><br/>
