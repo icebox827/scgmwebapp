@@ -132,6 +132,16 @@
                                 @endif
                             </div>
                             <div class="form-group">
+                                <label for="tel">Matricule*</label>
+                                <input id="tel" class="form-control"  name="tel" type="text" value="{{ old('matricule') }}" required>
+                                @if ($errors->has('matricule'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('matricule') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+
+                            <div class="form-group">
                                 <label for="tel">Telephone*</label>
                                 <input id="tel" class="form-control"  name="tel" type="text" value="{{ old('tel') }}" required>
                                 @if ($errors->has('tel'))
@@ -149,6 +159,20 @@
                                     </span>
                                 @endif
                             </div>
+                            <div class="form-group">
+                                <label for="sexe">Commune*</label>
+                                <select id="sexe" class="form-control select2" name="commune" required>
+                                    @foreach($communes as $p)
+                                        <option value="{{ $p->id }}">{{ $p->name }}</option>
+                                    @endforeach
+                                </select>
+                                @if ($errors->has('commune'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('commune') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+
                         </div>
                     </div>
                     <div class="col-lg-6">
@@ -409,6 +433,20 @@
                                     </span>
                                                 @endif
                                             </div>
+
+                                            <div class="form-group">
+                                                <label for="sexe">Commune*</label>
+                                                <select id="sexe" class="form-control select2" name="commune" required>
+                                                    @foreach($communes as $p)
+                                                        <option value="{{ $p->id }}">{{ $p->name }}</option>
+                                                    @endforeach
+                                                </select>
+                                                @if ($errors->has('commune'))
+                                                    <span class="help-block">
+                                        <strong>{{ $errors->first('commune') }}</strong>
+                                    </span>
+                                                @endif
+                                            </div>
                                             <div class="form-group">
                                                 <label for="tel">Telephone*</label>
                                                 <input id="tel" class="form-control"  name="telr" type="text" value="{{ old('tel') }}" required>
@@ -450,6 +488,20 @@
                                                 @if ($errors->has('adressere'))
                                                     <span class="help-block">
                                         <strong>{{ $errors->first('adressere') }}</strong>
+                                    </span>
+                                                @endif
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label for="sexe">Commune*</label>
+                                                <select id="sexe" class="form-control select2" name="commune" required>
+                                                    @foreach($communes as $p)
+                                                        <option value="{{ $p->id }}">{{ $p->name }}</option>
+                                                    @endforeach
+                                                </select>
+                                                @if ($errors->has('commune'))
+                                                    <span class="help-block">
+                                        <strong>{{ $errors->first('commune') }}</strong>
                                     </span>
                                                 @endif
                                             </div>
