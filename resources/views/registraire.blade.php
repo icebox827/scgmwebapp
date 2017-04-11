@@ -6,21 +6,32 @@
 
     <div class="content">
         <div class="container">
-            <form action="">
+            <form class="form-horizontal" role="form" method="post" action="{{route('conducteur.save')}}" data-parsley-validate novalidate enctype="multipart/form-data">
+                {{csrf_field()}}
                 <div class="row">
                     <div class="col-lg-6">
                         <div class="card-box">
                             <h4>Nouveau Conducteur</h4>
+                            @if (count($errors) > 0)
+                                <div class="alert alert-danger">
+                                    <ul>
+                                        @foreach ($errors->all() as $error)
+                                            <li>{{ $error }}</li>
+                                        @endforeach
+                                    </ul>
+                                </div>
+                            @endif
 
                             <div class="form-group gal-upload">
-                                <label for="file-4" class="col-sm-2 control-label">Photo*</label>
-                                <input id="file-4" class="form-control file-loading" type="file" name="picture" multiple data-show-caption="true">
+                                <label for="file-4">Photo*</label>
+                                <input id="image" class="form-control filestyle " type="file" name="picture" >
                                 @if ($errors->has('picture'))
                                     <span class="help-block">
                                         <strong>{{ $errors->first('picture') }}</strong>
                                     </span>
                                 @endif
                             </div>
+
                             <div class="form-group">
                                 <label for="nom">Nom*</label>
                                 <input id="name" class="form-control" name="name" type="text" value="{{ old('name') }}" required>
@@ -52,7 +63,7 @@
                                            id="datepicker-autoclose"
                                            value="{{ old('birthdate') }}" required>
                                             <span class="input-group-addon bg-custom b-0 text-white"><i
-                                                        class="icon-calendar"></i></span>
+                                                        class="fa fa-calendar"></i></span>
                                 </div>
                                 @if ($errors->has('birthdate'))
                                     <span class="help-block">
@@ -109,7 +120,7 @@
 
                             <div class="form-group">
                                 <label for="empreinted">Empreinte Index-droite*</label>
-                                <input id="empreinted" class="form-control"  name="empreinted" type="text" value="{{ old('empreinted') }}" required>
+                                <input id="empreinted" class="form-control filestyle " type="file" name="empreinted" >
                                 @if ($errors->has('empreinted'))
                                     <span class="help-block">
                                         <strong>{{ $errors->first('empreinted') }}</strong>
@@ -118,13 +129,23 @@
                             </div>
                             <div class="form-group">
                                 <label for="empreinteg">Empreinte Index-gauche*</label>
-                                <input id="empreinteg" class="form-control"  name="empreinteg" type="text" value="{{ old('empreinteg') }}" required>
+                                <input id="empreinteg" class="form-control filestyle " type="file" name="empreinteg" >
                                 @if ($errors->has('empreinteg'))
                                     <span class="help-block">
                                         <strong>{{ $errors->first('empreinteg') }}</strong>
                                     </span>
                                 @endif
                             </div>
+                            <div class="form-group">
+                                <label for="tel">Matricule*</label>
+                                <input id="tel" class="form-control"  name="tel" type="text" value="{{ old('matricule') }}" required>
+                                @if ($errors->has('matricule'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('matricule') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+
                             <div class="form-group">
                                 <label for="tel">Telephone*</label>
                                 <input id="tel" class="form-control"  name="tel" type="text" value="{{ old('tel') }}" required>
@@ -143,6 +164,20 @@
                                     </span>
                                 @endif
                             </div>
+                            <div class="form-group">
+                                <label for="sexe">Commune*</label>
+                                <select id="sexe" class="form-control select2" name="commune" required>
+                                    @foreach($communes as $p)
+                                        <option value="{{ $p->id }}">{{ $p->name }}</option>
+                                    @endforeach
+                                </select>
+                                @if ($errors->has('commune'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('commune') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+
                         </div>
                     </div>
                     <div class="col-lg-6">
@@ -152,7 +187,7 @@
                             <div class="row">
                                 <div class="col-sm-12" style="margin-top: 5px;">
                                     <div>
-                                        <img class="img-responsive" id="image" alt="--Picture--">
+                                        <img src="#" class="img-responsive" id="prev-image" alt="--Picture--">
                                     </div>
                                 </div>
                             </div>
@@ -403,6 +438,20 @@
                                     </span>
                                                 @endif
                                             </div>
+
+                                            <div class="form-group">
+                                                <label for="sexe">Commune*</label>
+                                                <select id="sexe" class="form-control select2" name="commune" required>
+                                                    @foreach($communes as $p)
+                                                        <option value="{{ $p->id }}">{{ $p->name }}</option>
+                                                    @endforeach
+                                                </select>
+                                                @if ($errors->has('commune'))
+                                                    <span class="help-block">
+                                        <strong>{{ $errors->first('commune') }}</strong>
+                                    </span>
+                                                @endif
+                                            </div>
                                             <div class="form-group">
                                                 <label for="tel">Telephone*</label>
                                                 <input id="tel" class="form-control"  name="telr" type="text" value="{{ old('tel') }}" required>
@@ -444,6 +493,20 @@
                                                 @if ($errors->has('adressere'))
                                                     <span class="help-block">
                                         <strong>{{ $errors->first('adressere') }}</strong>
+                                    </span>
+                                                @endif
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label for="sexe">Commune*</label>
+                                                <select id="sexe" class="form-control select2" name="commune" required>
+                                                    @foreach($communes as $p)
+                                                        <option value="{{ $p->id }}">{{ $p->name }}</option>
+                                                    @endforeach
+                                                </select>
+                                                @if ($errors->has('commune'))
+                                                    <span class="help-block">
+                                        <strong>{{ $errors->first('commune') }}</strong>
                                     </span>
                                                 @endif
                                             </div>
@@ -509,3 +572,42 @@
 
     </div>
     @endsection
+@section('js')
+    <script type="text/javascript">
+        function readURL(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+
+                function readImage(input){
+                    if(input.files && input.files[0]){
+                        var reader = new FileReader();
+                        reader.onload = function(e){
+                            $('#prev-image').attr('src', e.target.result);
+                        }
+                        reader.readAsDataURL(input.files[0]);
+                    }
+
+                }
+                $('#image').change(function(){
+                    readImage(this);
+                });
+
+
+
+
+                $(document).ready(function () {
+                    // Select2
+                    $(".selectpicker").selectpicker();
+                    jQuery('#datepicker-autoclose').datepicker({
+                        autoclose: true,
+                        todayHighlight: true
+                    });
+//            //////////////////////////
+                });
+                jQuery(function ($) {
+                    $('.autonumber').autoNumeric('init');
+                });
+
+
+    </script>
+@endsection
