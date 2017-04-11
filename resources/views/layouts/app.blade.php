@@ -168,7 +168,7 @@
             @yield('content')
 
             <footer class="footer">
-                2017 © Castro Technologies.
+                2017 © Coordination des Directions Départementales | PNH.
             </footer>
 
         </div>

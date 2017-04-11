@@ -118,9 +118,13 @@ Route::get('/vehicule', [
 
 ]);
 
-Route::get('/stati/',[
-   'uses' => 'ImportController@station',
-    'as' => 'stat'
+// Route::get('/stati/',[
+//    'uses' => 'ImportController@station',
+//     'as' => 'stat'
+// ]);
+Route::get('/cond/',[
+   'uses' => 'ImportController@conducteur',
+    'as' => 'cond'
 ]);
 
 
