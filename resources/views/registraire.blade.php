@@ -6,7 +6,8 @@
 
     <div class="content">
         <div class="container">
-            <form action="">
+            <form class="form-horizontal" role="form" method="post" action="{{route('conducteur.save')}}" data-parsley-validate novalidate enctype="multipart/form-data">
+                {{csrf_field()}}
                 <div class="row">
                     <div class="col-lg-6">
                         <div class="card-box">
@@ -21,6 +22,7 @@
                                     </span>
                                 @endif
                             </div>
+
                             <div class="form-group">
                                 <label for="nom">Nom*</label>
                                 <input id="name" class="form-control" name="name" type="text" value="{{ old('name') }}" required>
