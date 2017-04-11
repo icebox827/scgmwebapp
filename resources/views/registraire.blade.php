@@ -6,21 +6,27 @@
 
     <div class="content">
         <div class="container">
-            <form action="">
+            <form class="form-horizontal" role="form" method="post" action="{{route('conducteur.save')}}" data-parsley-validate novalidate enctype="multipart/form-data">
+                {{csrf_field()}}
                 <div class="row">
                     <div class="col-lg-6">
                         <div class="card-box">
                             <h4>Nouveau Conducteur</h4>
+                            @if (count($errors) > 0)
+                                <div class="alert alert-danger">
+                                    <ul>
+                                        @foreach ($errors->all() as $error)
+                                            <li>{{ $error }}</li>
+                                        @endforeach
+                                    </ul>
+                                </div>
+                            @endif
 
-                            <div class="form-group gal-upload">
-                                <label for="file-4" class="col-sm-2 control-label">Photo*</label>
-                                <input id="file-4" class="form-control file-loading" type="file" name="picture" multiple data-show-caption="true">
-                                @if ($errors->has('picture'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('picture') }}</strong>
-                                    </span>
-                                @endif
+                            <div class="form-group">
+                                <label for="file-4" class="control-label">Photo*</label>
+                                <input id="image" class="form-control file-style" type="file" name="picture">
                             </div>
+
                             <div class="form-group">
                                 <label for="nom">Nom*</label>
                                 <input id="name" class="form-control" name="name" type="text" value="{{ old('name') }}" required>
