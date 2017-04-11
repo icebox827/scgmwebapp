@@ -42,7 +42,7 @@ class ImportController extends Controller
     }
 
     public function readCsv(){
-        $file_handle = fopen('C:\wamp64\www\scgmwebapp\public\conducteur.csv','r');
+        $file_handle = fopen('C:\wamp64\www\scgmwebapp\public\reference.csv','r');
         while (!feof($file_handle)){
             $line_of_text[] = fgetcsv($file_handle, 1024,";");
         }
@@ -103,4 +103,22 @@ public function conducteur(){
             return "Done";
 
 }
+}
+
+public function reference(){
+     ini_set('max_execution_time', 1200);
+     $array = $this->readCsv();
+     // Condition pour insertion
+     for($i=1;$i<count($array);$i++){
+        reference = new Reference();
+        $reference->nom=utf8_encode($array[$i][1]);
+        $reference->prenom=utf8_encode($array[$i][2]);
+        $reference->numero=$array[$i][3];
+        $reference->rue=utf8_encode($array[$i][4]);
+        $reference->quartier=utf8_encode($array[$i][5]);
+        $commune = Commune::where('name','LIKE', $array[$i][6])->first();
+        $reference->telephone=$array[$i][7];
+        $conducteur = Conducteur::where('nif','LIKE', $array[$i][8])->first();
+        $conducteur->references()->attach($reference);
+     }
 }
