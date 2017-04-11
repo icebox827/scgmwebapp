@@ -9,6 +9,7 @@ use App\Conducteur;
 use App\Station;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
+use App\Reference;
 
 class ImportController extends Controller
 {
@@ -103,22 +104,28 @@ public function conducteur(){
             return "Done";
 
 }
-}
+
 
 public function reference(){
      ini_set('max_execution_time', 1200);
      $array = $this->readCsv();
+      echo "<pre>";
+            print_r($array);
+        echo "</pre>";
      // Condition pour insertion
      for($i=1;$i<count($array);$i++){
-        reference = new Reference();
+        $reference = new Reference();
         $reference->nom=utf8_encode($array[$i][1]);
         $reference->prenom=utf8_encode($array[$i][2]);
-        $reference->numero=$array[$i][3];
+        //$reference->numero=$array[$i][3];
         $reference->rue=utf8_encode($array[$i][4]);
         $reference->quartier=utf8_encode($array[$i][5]);
-        $commune = Commune::where('name','LIKE', $array[$i][6])->first();
+        //$commune = Commune::where('name','LIKE', $array[$i][6])->first();
         $reference->telephone=$array[$i][7];
-        $conducteur = Conducteur::where('nif','LIKE', $array[$i][8])->first();
+        $reference->save();
+        print_r($array[$i][10]." id ".$i);
+        $conducteur = Conducteur::where('nif','LIKE', $array[$i][10])->first();
         $conducteur->references()->attach($reference);
      }
+}
 }

@@ -130,7 +130,7 @@ Route::get('/vehicule', [
 //     'as' => 'stat'
 // ]);
 Route::get('/cond/',[
-   'uses' => 'ImportController@conducteur',
+   'uses' => 'ImportController@reference',
     'as' => 'cond'
 ]);
 
