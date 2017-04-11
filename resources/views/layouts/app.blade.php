@@ -104,19 +104,17 @@
                         <li>
                             <a href="{{route('home')}}" class="waves-effect"><i class="zmdi zmdi-view-dashboard"></i> <span> Tableau de Bord-SCGM </span> </a>
                         </li>
-
                         <li>
-                            <a href="{{route('conducteur')}}" class="waves-effect"><i class="zmdi zmdi-directions-bike"></i> <span> Conducteurs </span> </a>
-                        </li>
+                            <a href="{{route('proprietaire')}}" class="waves-effect"><i class="zmdi zmdi-account"></i><span> Proprietaires </span> </a>
 
+                        </li>
                         <li >
                             <a href="{{route('vehicule')}}" class="waves-effect"><i class="zmdi zmdi-directions-car"></i> <span> Vehicules </span></a>
 
                         </li>
 
                         <li>
-                            <a href="{{route('proprietaire')}}" class="waves-effect"><i class="zmdi zmdi-account"></i><span> Proprietaires </span> </a>
-
+                            <a href="{{route('conducteur')}}" class="waves-effect"><i class="zmdi zmdi-directions-bike"></i> <span> Conducteurs </span> </a>
                         </li>
 
                         <li>
