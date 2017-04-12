@@ -83,4 +83,9 @@ class ConducteurController extends Controller
             return redirect()->route('conducteur');
         }
     }
+    public function detail()
+    {
+
+        return view('conducteur-detail');
+    }
 }
