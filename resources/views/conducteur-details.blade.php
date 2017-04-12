@@ -8,7 +8,7 @@
             <div class="row">
                 <div class="col-sm-6">
                     <div class="m-b-30">
-                        STATION :
+                        STATION : {{ $stations->codestation }} - {{ $stations->station }}
                     </div>
                 </div>
                 <div class="col-lg-12">
@@ -27,8 +27,6 @@
                         </div>
 
                         <h4 class="header-title m-t-0 m-b-30">Liste des Conducteurs</h4>
-
-
 
                         <table id="datatable-buttons" class="table table-striped table-bordered">
                             <thead>
@@ -59,7 +57,7 @@
                                     <td>{{ $conducteur->sexe }}</td>
                                     <td>{{ $conducteur->cin }}</td>
                                     <td>{{ $conducteur->nif }}</td>
-                                    <td>{{ $conducteur->permiscondure }}</td>
+                                    <td>{{ $conducteur->permisconduire }}</td>
                                     <td>{{ $conducteur->telephone }}</td>
                                     <td>{{ $conducteur->proprietaire->nif  }}</td>
 

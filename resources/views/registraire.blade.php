@@ -109,7 +109,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="permis">Permis de Conduire*</label>
-                                <input id="permis" class="form-control"  name="permis" data-mask="AA-99999-AA" type="text" value="{{ old('permis') }}" required>
+                                <input id="permis" class="form-control"  name="permis" data-mask="aa-99999-aa" type="text" value="{{ old('permis') }}" required>
                                 @if ($errors->has('permis'))
                                     <span class="help-block">
                                         <strong>{{ $errors->first('permis') }}</strong>

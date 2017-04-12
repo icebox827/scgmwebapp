@@ -115,7 +115,7 @@ Route::get('/conducteur', [
 
 ]);
 
-Route::get('/conducteur-details', [
+Route::get('/conducteur-details/{id?}', [
     'uses'=>'ConducteurController@detail',
     'as'=>'conducteur-details'
 

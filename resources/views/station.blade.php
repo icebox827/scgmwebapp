@@ -32,7 +32,8 @@
                                 <th>Code Station</th>
                                 <th>Departement</th>
                                 <th>Commune</th>
-
+                                <th>Effectifs</th>
+                                <th>Conducteurs</th>
 
                             </tr>
                             </thead>
@@ -44,7 +45,8 @@
                                 <td>{{ $s->codestation }}</td>
                                 <td>{{ $s->commune->departement->name }}</td>
                                 <td>{{ $s->commune->name }}</td>
-
+                                <td>{{ $s->conducteurs()->count() }}</td>
+                                <td><a href="{{ route('conducteur-details') }}/{{ $s->id }}" class="btn btn-info waves-effect waves-light btn-sm m-b-5" >Conducteurs</a></td>
                             </tr>
                             @endforeach
                             </tbody>

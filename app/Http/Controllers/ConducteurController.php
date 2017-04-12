@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Commune;
 use App\Conducteur;
 use App\Reference;
+use App\Station;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
@@ -83,9 +84,10 @@ class ConducteurController extends Controller
             return redirect()->route('conducteur');
         }
     }
-    public function detail()
+    public function detail($id)
     {
-
-        return view('conducteur-detail');
+        $stations = Station::find($id);
+        $conducteurs  = Conducteur::where('station_id', $stations->id)->get();
+        return view('conducteur-details',compact('stations','conducteurs'));
     }
 }
