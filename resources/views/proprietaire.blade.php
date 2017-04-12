@@ -48,6 +48,8 @@
 								<th>Permis de Conduire</th>
 								<th>Telephone</th>
 								<th>Adresse</th>
+								<th>Effectifs</th>
+								<th>Vehicule</th>
 							</tr>
 							</thead>
 
@@ -64,6 +66,10 @@
 								<td>{{ $p->permisconduire }}</td>
 								<td>{{ $p->telephone }}</td>
 								<td>{{ $p->adress }}</td>
+								<td>{{ $p->vehicules()->count() }}</td>
+								<td>
+									<a href="{{ route('vehicules-details') }}/{{ $p->id }}" class="btn btn-info waves-effect waves-light btn-sm m-b-5" >Vehicules</a>
+								</td>
 							</tr>
 								@endforeach
 

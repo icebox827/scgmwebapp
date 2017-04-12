@@ -9,7 +9,7 @@ Vehicules
 
             <div class="col-sm-6">
                 <div class="m-b-30">
-                    Proprietaire :
+                    Proprietaire : {{ $proprietaire->nom }} - {{ $proprietaire->prenom }} / {{ $proprietaire->nif }}
                 </div>
             </div>
 

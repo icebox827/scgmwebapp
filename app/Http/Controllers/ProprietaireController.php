@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Proprietaire;
+use App\Vehicule;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 
@@ -12,8 +13,10 @@ class ProprietaireController extends Controller
         $proprietaires = Proprietaire::orderBy('updated_at','desc')->get();
         return view('proprietaire',compact('proprietaires'));
     }
-    public function details(){
-        return view ('proprietaire-details');
+    public function details($id){
+        $proprietaire = Proprietaire::find($id);
+        $vehicules = Vehicule::where('proprietaire_id',$id)->get();
+        return view ('vehicules-details',compact('proprietaire','vehicules'));
     }
 
     public function save(Request $request){

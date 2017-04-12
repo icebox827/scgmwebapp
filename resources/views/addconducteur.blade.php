@@ -265,9 +265,16 @@
 @endsection
 @section('js')
     <script type="text/javascript">
-        function readURL(input) {
-            if (input.files && input.files[0]) {
-                var reader = new FileReader();
+
+        //        $(document).ready(function () {
+        //            $('#file-4').filestyle({
+        //                input: false
+        //            });
+        //        });
+        //        $("input[type=file]").on("change", function () {
+        //            $("#image").attr("src", URL.createObjectURL(this.files[0]));
+        //            instance = test();
+        //        });
 
         function readImage(input){
             if(input.files && input.files[0]){
@@ -298,6 +305,9 @@
         jQuery(function ($) {
             $('.autonumber').autoNumeric('init');
         });
+
+
+
 
 
     </script>
