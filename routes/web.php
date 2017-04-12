@@ -61,6 +61,11 @@ Route::get('/proprietaire',[
     'uses'=>'ProprietaireController@index',
     'as'=>'proprietaire'
 ]);
+Route::get('/proprietaire-details',[
+    'uses'=>'ProprietaireController@details',
+    'as'=>'proprietaire-details'
+]);
+
 Route::post('/proprietaire-save',[
     'uses' => 'ProprietaireController@save',
     'as' => 'proprietaire.save'
@@ -80,7 +85,7 @@ Route::get('/registraire', [
 
 ]);
 Route::post('/registraire-save',[
-    'uses'=>'RegistraireController@index',
+    'uses'=>'RegistraireController@save',
     'as'=>'registraire.save'
 ]);
 
@@ -112,6 +117,12 @@ Route::group(['prefix' => 'admin'], function () {
 Route::get('/conducteur', [
     'uses'=>'ConducteurController@index',
     'as'=>'conducteur'
+
+]);
+
+Route::get('/conducteur-details/{id?}', [
+    'uses'=>'ConducteurController@detail',
+    'as'=>'conducteur-details'
 
 ]);
 

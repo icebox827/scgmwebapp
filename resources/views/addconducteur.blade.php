@@ -101,7 +101,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="nif">NIF*</label>
-                                <input id="nif" class="form-control"  name="nif" type="text" value="{{ old('nif') }}" required>
+                                <input id="nif" class="form-control"  name="nif" data-mask="999-999-999-9" type="text" value="{{ old('nif') }}" required>
                                 @if ($errors->has('nif'))
                                     <span class="help-block">
                                         <strong>{{ $errors->first('nif') }}</strong>
@@ -110,7 +110,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="permis">Permis de Conduire*</label>
-                                <input id="permis" class="form-control"  name="permis" type="text" value="{{ old('permis') }}" required>
+                                <input id="permis" class="form-control"  name="permis" data-mask="aa-99999-aa" type="text" value="{{ old('permis') }}" required>
                                 @if ($errors->has('permis'))
                                     <span class="help-block">
                                         <strong>{{ $errors->first('permis') }}</strong>

@@ -6,7 +6,7 @@
 
     <div class="content">
         <div class="container">
-            <form class="form-horizontal" role="form" method="post" action="{{route('conducteur.save')}}" data-parsley-validate novalidate enctype="multipart/form-data">
+            <form class="form-horizontal" role="form" method="post" action="{{route('registraire.save')}}" data-parsley-validate novalidate enctype="multipart/form-data">
                 {{csrf_field()}}
                 <div class="row">
                     <div class="col-lg-6">
@@ -105,11 +105,11 @@
                             </div>
                             <div class="form-group">
                                 <label for="nif">NIF*</label>
-                                <input id="nif" class="form-control"  name="nif" type="text" value="{{ old('nif') }}" required>
+                                <input id="nif" class="form-control"  name="nif" data-mask="999-999-999-9" type="text" value="{{ old('nif') }}" required>
                             </div>
                             <div class="form-group">
                                 <label for="permis">Permis de Conduire*</label>
-                                <input id="permis" class="form-control"  name="permis" type="text" value="{{ old('permis') }}" required>
+                                <input id="permis" class="form-control"  name="permis" data-mask="aa-99999-aa" type="text" value="{{ old('permis') }}" required>
                                 @if ($errors->has('permis'))
                                     <span class="help-block">
                                         <strong>{{ $errors->first('permis') }}</strong>
@@ -138,7 +138,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="tel">Matricule*</label>
-                                <input id="tel" class="form-control"  name="tel" type="text" value="{{ old('matricule') }}" required>
+                                <input id="tel" class="form-control"  name="matricule" type="text" value="{{ old('matricule') }}" required>
                                 @if ($errors->has('matricule'))
                                     <span class="help-block">
                                         <strong>{{ $errors->first('matricule') }}</strong>
@@ -165,10 +165,10 @@
                                 @endif
                             </div>
                             <div class="form-group">
-                                <label for="sexe">Commune*</label>
-                                <select id="sexe" class="form-control select2" name="commune" required>
-                                    @foreach($communes as $p)
-                                        <option value="{{ $p->id }}">{{ $p->name }}</option>
+                                <label for="commune">Commune*</label>
+                                <select id="commune" class="form-control select2" name="commune" required>
+                                    @foreach($communes as $c)
+                                        <option value="{{ $c->id }}">{{ $c->name }}</option>
                                     @endforeach
                                 </select>
                                 @if ($errors->has('commune'))
@@ -234,8 +234,8 @@
                                            placeholder="mm/dd/yyyy"
                                            id="datepicker-autoclose"
                                            value="{{ old('birthdate') }}" required>
-                                            <span class="input-group-addon bg-custom b-0 text-white"><i
-                                                        class="icon-calendar"></i></span>
+                                    <span class="input-group-addon bg-custom b-0 text-white"><i
+                                                class="fa fa-calendar"></i></span>
                                 </div>
                                 @if ($errors->has('birthdatep'))
                                     <span class="help-block">
@@ -277,7 +277,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="nif">NIF*</label>
-                                <input id="nif" class="form-control"  name="nifp" type="text" value="{{ old('nif') }}" required>
+                                <input id="nif" class="form-control"  name="nifp" data-mask="999-999-999-9" type="text" value="{{ old('nif') }}" required>
                                 @if ($errors->has('nifp'))
                                     <span class="help-block">
                                         <strong>{{ $errors->first('nifp') }}</strong>
@@ -304,7 +304,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="adresse">Adresse*</label>
-                                <input id="adresse" class="form-control"  name="adresse" type="text" value="{{ old('adresse') }}" required>
+                                <input id="adresse" class="form-control"  name="adressep" type="text" value="{{ old('adresse') }}" required>
                                 @if ($errors->has('adressep'))
                                     <span class="help-block">
                                         <strong>{{ $errors->first('adressep') }}</strong>
@@ -340,7 +340,7 @@
 
                                 <div class="form-group">
                                     <label for="annee">Annee *</label>
-                                    <input  id ="annee" class="form-control" name="annee" type="text" value="{{ old('mannee') }}" required>
+                                    <input  id ="annee" class="form-control" name="annee" type="text" value="{{ old('annee') }}" required>
                                     @if ($errors->has('annee'))
                                         <span class="help-block">
                                         <strong>{{ $errors->first('annee') }}</strong>

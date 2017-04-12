@@ -12,4 +12,8 @@ class Station extends Model
     public function commune(){
         return $this->belongsTo('App\Commune');
     }
+    public function conducteurs(){
+        return $this->hasMany('App\Conducteur');
+    }
+
 }

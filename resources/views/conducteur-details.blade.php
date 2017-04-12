@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('pagetitle')
-    Les Personnes de Reference
+    Conducteurs
 @endsection
 @section('content')
     <div class="content">
@@ -8,7 +8,7 @@
             <div class="row">
                 <div class="col-sm-6">
                     <div class="m-b-30">
-                        <a href="{{route('addreference')}}"> <button id="addToTable" class="btn btn-primary waves-effect waves-light">Ajouter <i class="fa fa-plus"></i></button></a>
+                        STATION : {{ $stations->codestation }} - {{ $stations->station }}
                     </div>
                 </div>
                 <div class="col-lg-12">
@@ -26,33 +26,42 @@
                             </ul>
                         </div>
 
-                        <h4 class="header-title m-t-0 m-b-30">Liste des References</h4>
-
-
+                        <h4 class="header-title m-t-0 m-b-30">Liste des Conducteurs</h4>
 
                         <table id="datatable-buttons" class="table table-striped table-bordered">
                             <thead>
                             <tr>
+                                <th>Photo</th>
                                 <th>Nom</th>
                                 <th>Prenom</th>
+                                <th>Date de Naissance</th>
+                                <th>Lieu de Naissance</th>
+                                <th>Sexe</th>
+                                <th>CIN</th>
+                                <th>NIF</th>
+                                <th>Permis de Conduire</th>
                                 <th>Telephone</th>
-                                <th>Adresse</th>
+                                <th>Proprietaire</th>
+
                             </tr>
                             </thead>
 
                             <tbody>
-                            @foreach($references as $r)
-                            <tr>
-                                <td>{{ $r->nom }}</td>
-                                <td>{{ $r->prenom }}</td>
-                                <td>{{ $r->telephone }}</td>
-                                <td>
-                                    @if($r->quartier)
-                                        {{ $r->quartier }}
-                                        @endif
+                            @foreach($conducteurs as $conducteur)
+                                <tr>
+                                    <td><img src="{{ URL::to('storage/'. $conducteur->photo) }}" class="img-responsive" style="width: 100px; height: 100px;"></td>
+                                    <td>{{ $conducteur->nom }}</td>
+                                    <td>{{ $conducteur->prenom }}</td>
+                                    <td>{{ $conducteur->datenaissance }}</td>
+                                    <td>{{ $conducteur->lieunaissance }}</td>
+                                    <td>{{ $conducteur->sexe }}</td>
+                                    <td>{{ $conducteur->cin }}</td>
+                                    <td>{{ $conducteur->nif }}</td>
+                                    <td>{{ $conducteur->permisconduire }}</td>
+                                    <td>{{ $conducteur->telephone }}</td>
+                                    <td>{{ $conducteur->proprietaire->nif  }}</td>
 
-                                </td>
-                            </tr>
+                                </tr>
                             @endforeach
                             </tbody>
                         </table>
