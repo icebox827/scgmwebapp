@@ -80,7 +80,7 @@ Route::get('/registraire', [
 
 ]);
 Route::post('/registraire-save',[
-    'uses'=>'RegistraireController@index',
+    'uses'=>'RegistraireController@save',
     'as'=>'registraire.save'
 ]);
 
