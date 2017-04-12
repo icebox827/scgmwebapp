@@ -46,7 +46,12 @@
                                 <td>{{ $r->nom }}</td>
                                 <td>{{ $r->prenom }}</td>
                                 <td>{{ $r->telephone }}</td>
-                                <td>{{ $r->commune->name }}</td>
+                                <td>
+                                    @if($r->quartier)
+                                        {{ $r->quartier }}
+                                        @endif
+
+                                </td>
                             </tr>
                             @endforeach
                             </tbody>
