@@ -12,6 +12,9 @@ class ProprietaireController extends Controller
         $proprietaires = Proprietaire::orderBy('updated_at','desc')->get();
         return view('proprietaire',compact('proprietaires'));
     }
+    public function details(){
+        return view ('proprietaire-details');
+    }
 
     public function save(Request $request){
         $this->validate($request,[
