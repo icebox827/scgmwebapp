@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Commune;
 use App\Conducteur;
 use App\Proprietaire;
 use App\Reference;
@@ -9,17 +10,20 @@ use App\Station;
 use App\Vehicule;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
+use Intervention\Image\Facades\Image;
 
 class RegistraireController extends Controller
 {
     public function index(){
+        $communes = Commune::orderBy('name','asc')->get();
         $stations = Station::orderBy('codestation','asc')->get();
-        return view('registraire',compact('stations'));
+        return view('registraire',compact('stations','communes'));
     }
     public function save(Request $request){
         $this->validate($request,[
             'name' => 'required',
-            'prenom'=>'requuired',
+            'prenom'=>'required',
             'birthdate'=>'required',
             'lnaissance'=>'required',
             'sex'=>'required',
@@ -29,13 +33,13 @@ class RegistraireController extends Controller
             'empreinted'=>'required',
             'empreinteg'=>'required',
             'tel'=>'required',
+            'matricule' => 'required',
             'adresse'=>'required',
             'namep'=>'required',
             'prenomp'=>'required',
             'birthdatep'=>'required',
             'lnaissancep'=>'required',
             'sexp'=>'required',
-            'cinp'=>'required',
             'nifp' => 'required',
             'permisp'=>'required',
             'telp'=>'required',
@@ -66,11 +70,11 @@ class RegistraireController extends Controller
                 $proprietaire->prenom = $request->prenomp;
                 $proprietaire->datenaissance = new Carbon($proprietaire->birthdatep);
                 $proprietaire->sexe = $request->sexp;
-                $proprietaire->cin = $request->cinp;
+//                $proprietaire->cin = $request->cinp;
                 $proprietaire->nif = $request->nifp;
                 $proprietaire->permisconduire = $request->permisp;
                 $proprietaire->telephone = $request->telephone;
-                $proprietaire->adressep = $request->adressep;
+                $proprietaire->adress = $request->adressep;
                 $proprietaire->save();
         }
         $vehicule = Vehicule::where('nummoteur',$request->numeromoteur)->first();
