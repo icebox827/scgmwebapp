@@ -22,9 +22,14 @@
                                 </div>
                             @endif
 
-                            <div class="form-group">
-                                <label for="file-4" class="control-label">Photo*</label>
-                                <input id="image" class="form-control file-style" type="file" name="picture">
+                            <div class="form-group gal-upload">
+                                <label for="file-4">Photo*</label>
+                                <input id="image" class="form-control filestyle " type="file" name="picture" >
+                                @if ($errors->has('picture'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('picture') }}</strong>
+                                    </span>
+                                @endif
                             </div>
 
                             <div class="form-group">
@@ -58,7 +63,7 @@
                                            id="datepicker-autoclose"
                                            value="{{ old('birthdate') }}" required>
                                             <span class="input-group-addon bg-custom b-0 text-white"><i
-                                                        class="icon-calendar"></i></span>
+                                                        class="fa fa-calendar"></i></span>
                                 </div>
                                 @if ($errors->has('birthdate'))
                                     <span class="help-block">
@@ -115,7 +120,7 @@
 
                             <div class="form-group">
                                 <label for="empreinted">Empreinte Index-droite*</label>
-                                <input id="empreinted" class="form-control"  name="empreinted" type="text" value="{{ old('empreinted') }}" required>
+                                <input id="empreinted" class="form-control filestyle " type="file" name="empreinted" >
                                 @if ($errors->has('empreinted'))
                                     <span class="help-block">
                                         <strong>{{ $errors->first('empreinted') }}</strong>
@@ -124,7 +129,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="empreinteg">Empreinte Index-gauche*</label>
-                                <input id="empreinteg" class="form-control"  name="empreinteg" type="text" value="{{ old('empreinteg') }}" required>
+                                <input id="empreinteg" class="form-control filestyle " type="file" name="empreinteg" >
                                 @if ($errors->has('empreinteg'))
                                     <span class="help-block">
                                         <strong>{{ $errors->first('empreinteg') }}</strong>
@@ -182,7 +187,7 @@
                             <div class="row">
                                 <div class="col-sm-12" style="margin-top: 5px;">
                                     <div>
-                                        <img class="img-responsive" id="image" alt="--Picture--">
+                                        <img src="#" class="img-responsive" id="prev-image" alt="--Picture--">
                                     </div>
                                 </div>
                             </div>
@@ -567,3 +572,42 @@
 
     </div>
     @endsection
+@section('js')
+    <script type="text/javascript">
+        function readURL(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+
+                function readImage(input){
+                    if(input.files && input.files[0]){
+                        var reader = new FileReader();
+                        reader.onload = function(e){
+                            $('#prev-image').attr('src', e.target.result);
+                        }
+                        reader.readAsDataURL(input.files[0]);
+                    }
+
+                }
+                $('#image').change(function(){
+                    readImage(this);
+                });
+
+
+
+
+                $(document).ready(function () {
+                    // Select2
+                    $(".selectpicker").selectpicker();
+                    jQuery('#datepicker-autoclose').datepicker({
+                        autoclose: true,
+                        todayHighlight: true
+                    });
+//            //////////////////////////
+                });
+                jQuery(function ($) {
+                    $('.autonumber').autoNumeric('init');
+                });
+
+
+    </script>
+@endsection
