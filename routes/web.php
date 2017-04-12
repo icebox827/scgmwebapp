@@ -115,6 +115,12 @@ Route::get('/conducteur', [
 
 ]);
 
+Route::get('/conducteur-details', [
+    'uses'=>'ConducteurController@detail',
+    'as'=>'conducteur-details'
+
+]);
+
 Route::post('/conducteur-save',[
     'uses'=>'ConducteurController@save',
     'as'=>'conducteur.save'
