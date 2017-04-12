@@ -12,4 +12,8 @@ class Proprietaire extends Model
     public function commune(){
         return $this->belongsTo('App\Commune');
     }
+    public function vehicules()
+    {
+        return $this->hasMany('App\Vehicule');
+    }
 }

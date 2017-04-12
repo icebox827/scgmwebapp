@@ -61,9 +61,9 @@ Route::get('/proprietaire',[
     'uses'=>'ProprietaireController@index',
     'as'=>'proprietaire'
 ]);
-Route::get('/proprietaire-details',[
+Route::get('/vehicules-details/{id?}',[
     'uses'=>'ProprietaireController@details',
-    'as'=>'proprietaire-details'
+    'as'=>'vehicules-details'
 ]);
 
 Route::post('/proprietaire-save',[

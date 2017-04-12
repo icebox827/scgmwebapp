@@ -232,7 +232,7 @@
                                 <div class="input-group">
                                     <input type="text" name="birthdatep" class="form-control"
                                            placeholder="mm/dd/yyyy"
-                                           id="datepicker-autoclose"
+                                           id="datepicker-autoclose1"
                                            value="{{ old('birthdate') }}" required>
                                     <span class="input-group-addon bg-custom b-0 text-white"><i
                                                 class="fa fa-calendar"></i></span>
@@ -578,16 +578,29 @@
             if (input.files && input.files[0]) {
                 var reader = new FileReader();
 
-                function readImage(input){
-                    if(input.files && input.files[0]){
+                function readImage(input) {
+                    if (input.files && input.files[0]) {
                         var reader = new FileReader();
-                        reader.onload = function(e){
+                        reader.onload = function (e) {
                             $('#prev-image').attr('src', e.target.result);
                         }
                         reader.readAsDataURL(input.files[0]);
                     }
 
                 }
+            }
+        }
+
+        function readImage(input){
+            if(input.files && input.files[0]){
+                var reader = new FileReader();
+                reader.onload = function(e){
+                    $('#prev-image').attr('src', e.target.result);
+                }
+                reader.readAsDataURL(input.files[0]);
+            }
+
+        }
                 $('#image').change(function(){
                     readImage(this);
                 });
@@ -599,6 +612,10 @@
                     // Select2
                     $(".selectpicker").selectpicker();
                     jQuery('#datepicker-autoclose').datepicker({
+                        autoclose: true,
+                        todayHighlight: true
+                    });
+                    jQuery('#datepicker-autoclose1').datepicker({
                         autoclose: true,
                         todayHighlight: true
                     });
