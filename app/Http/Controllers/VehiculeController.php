@@ -27,12 +27,13 @@ class VehiculeController extends Controller
         $proprietaire = Proprietaire::find($vehicule->proprietaire_id);
         $conducteur = Conducteur::where('vehicule_id', $vehicule->id)->first();
         $station = Station::find($conducteur->station_id);
-        return view('detaille',compact('vehicule','proprietaire','conducteur','station'));
+        $references = $conducteur->references;
+        return view('detaille',compact('vehicule','proprietaire','conducteur','station','references'));
     }
 
     public function qrcode($id){
             $vehicule = Vehicule::find($id);
-            Image::make(QrCode::format('png', 'vehicule.png')->color(183,48,9)->size(320)->generate($vehicule->nummoteur))->save(public_path('vehicule.png'));
+            Image::make(QrCode::format('png', 'vehicule.png')->color(183,48,9)->size(320)->merge("/public/assets/logopnh.png",.3)->errorCorrection('H')->generate($vehicule->nummoteur))->save(public_path('vehicule.png'));
 
         return Response::download(public_path('vehicule.png'));
     }

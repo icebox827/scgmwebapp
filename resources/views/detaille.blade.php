@@ -14,7 +14,7 @@
                             <div class="row">
                                 <div class="col-lg-4">
                                     <h4 class="m-b-30 m-t-0 header-title"><b>QR Code</b></h4>
-                                    <img src="data:image/png;base64, {!! base64_encode(QrCode::format('png')->color(183,48,9)->size(320)->generate($vehicule->nummoteur)) !!} ">
+                                    <img src="data:image/png;base64, {!! base64_encode(QrCode::format('png')->merge("/public/assets/logopnh.png",.3)->errorCorrection('H')->color(183,48,9)->size(320)->generate($vehicule->nummoteur)) !!} ">
                                     {{--<img class="img-responsive" src="{!!$QrCode::format('png')->generate($vehicule->nummoteur)!!}"/>--}}
                                     <div class="text-left" style="margin-top: 10px;">
                                         <a href="{{ route('qr.download') }}/{{ $vehicule->id }}" class="btn btn-ico waves-effect waves-light btn-info m-b-5">
@@ -140,7 +140,7 @@
                                         <div class="form-group">
                                             <label class="col-sm-5 control-label">Adresse</label>
                                             <div class="col-sm-7">
-                                                <a href="#" id="comments" data-type="textarea" data-pk="1" data-placeholder="Your comments here..." data-title="Enter comments">{{ $proprietaire->adress }}</a>
+                                                <a href="#" id="comments" data-type="textarea"   data-title="Enter comments">{{ $proprietaire->adress }}</a>
                                             </div>
                                         </div>
                                     </form>
@@ -232,63 +232,68 @@
                                     </form>
                                 </div><!-- end col -->
 
-                                <div class="col-lg-4">
-                                    <h4 class="m-b-30 m-t-0 header-title"><b>Reference 1</b></h4>
-                                    <form action="#" class="form-horizontal editor-horizontal">
-                                        <div class="form-group">
-                                            <label class="col-sm-5 control-label">Nom</label>
-                                            <div class="col-sm-7">
-                                                <a href="#" id="username" data-type="text" data-pk="1" data-title="Enter username">superuser</a>
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label class="col-sm-5 control-label">Prenom</label>
-                                            <div class="col-sm-7">
-                                                <a href="#" id="firstname" data-type="text" data-pk="1" data-placement="right" data-placeholder="Required" data-title="Enter your firstname"></a>
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label class="col-sm-5 control-label">Adresse</label>
-                                            <div class="col-sm-7">
-                                                <a href="#" id="sex" data-type="select" data-pk="1" data-value="" data-title="Select sex"></a>
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label class="col-sm-5 control-label">Telephone</label>
-                                            <div class="col-sm-7">
-                                                <a href="#" id="status" data-type="select" data-pk="1" data-value="0" data-source="/status" data-title="Select status">Active</a>
-                                            </div>
-                                        </div>
-                                    </form>
-                                    <h4 class="m-b-30 m-t-0 header-title"><b>Reference 2</b></h4>
-                                    <form action="#" class="form-horizontal editor-horizontal">
-                                        <div class="form-group">
-                                            <label class="col-sm-5 control-label">Nom</label>
-                                            <div class="col-sm-7">
-                                                <a href="#" id="username" data-type="text" data-pk="1" data-title="Enter username">superuser</a>
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label class="col-sm-5 control-label">Prenom</label>
-                                            <div class="col-sm-7">
-                                                <a href="#" id="firstname" data-type="text" data-pk="1" data-placement="right" data-placeholder="Required" data-title="Enter your firstname"></a>
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label class="col-sm-5 control-label">Adresse</label>
-                                            <div class="col-sm-7">
-                                                <a href="#" id="sex" data-type="select" data-pk="1" data-value="" data-title="Select sex"></a>
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label class="col-sm-5 control-label">Telephone</label>
-                                            <div class="col-sm-7">
-                                                <a href="#" id="status" data-type="select" data-pk="1" data-value="0" data-source="/status" data-title="Select status">Active</a>
-                                            </div>
-                                        </div>
-                                    </form>
-                                </div><!-- end col -->
 
+
+                                <div class="col-lg-4">
+
+                                    @foreach($references as $r)
+                                    <h4 class="m-b-30 m-t-0 header-title"><b>Reference {{ $loop->index + 1 }}</b></h4>
+                                    <form action="#" class="form-horizontal editor-horizontal">
+                                        <div class="form-group">
+                                            <label class="col-sm-5 control-label">Nom</label>
+                                            <div class="col-sm-7">
+                                                <a href="#" id="username" data-type="text" data-pk="1" data-title="Enter username">{{ $r->nom }}</a>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-sm-5 control-label">Prenom</label>
+                                            <div class="col-sm-7">
+                                                <a href="#" id="firstname" data-type="text" data-pk="1" data-placement="right" data-placeholder="Required" data-title="Enter your firstname">{{ $r->prenom }}</a>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-sm-5 control-label">Adresse</label>
+                                            <div class="col-sm-7">
+                                                <a href="#" id="sex" data-type="text" >{{ $r->quartier }}</a>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-sm-5 control-label">Telephone</label>
+                                            <div class="col-sm-7">
+                                                <a href="#" id="status" data-type="text" >{{ $r->telephone }}</a>
+                                            </div>
+                                        </div>
+                                    </form>
+
+                                    {{--<h4 class="m-b-30 m-t-0 header-title"><b>Reference 2</b></h4>--}}
+                                    {{--<form action="#" class="form-horizontal editor-horizontal">--}}
+                                        {{--<div class="form-group">--}}
+                                            {{--<label class="col-sm-5 control-label">Nom</label>--}}
+                                            {{--<div class="col-sm-7">--}}
+                                                {{--<a href="#" id="username" data-type="text" data-pk="1" data-title="Enter username">superuser</a>--}}
+                                            {{--</div>--}}
+                                        {{--</div>--}}
+                                        {{--<div class="form-group">--}}
+                                            {{--<label class="col-sm-5 control-label">Prenom</label>--}}
+                                            {{--<div class="col-sm-7">--}}
+                                                {{--<a href="#" id="firstname" data-type="text" data-pk="1" data-placement="right" data-placeholder="Required" data-title="Enter your firstname"></a>--}}
+                                            {{--</div>--}}
+                                        {{--</div>--}}
+                                        {{--<div class="form-group">--}}
+                                            {{--<label class="col-sm-5 control-label">Adresse</label>--}}
+                                            {{--<div class="col-sm-7">--}}
+                                                {{--<a href="#" id="sex" data-type="select" data-pk="1" data-value="" data-title="Select sex"></a>--}}
+                                            {{--</div>--}}
+                                        {{--</div>--}}
+                                        {{--<div class="form-group">--}}
+                                            {{--<label class="col-sm-5 control-label">Telephone</label>--}}
+                                            {{--<div class="col-sm-7">--}}
+                                                {{--<a href="#" id="status" data-type="select" data-pk="1" data-value="0" data-source="/status" data-title="Select status">Active</a>--}}
+                                            {{--</div>--}}
+                                        {{--</div>--}}
+                                    {{--</form>--}}
+                                {{--</div><!-- end col -->--}}
+                                @endforeach
                             </div><!-- end row -->
                         </div>
                     </div><!-- end col -->

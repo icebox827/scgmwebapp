@@ -48,11 +48,10 @@
                             <!-- End Notification bar -->
                         </li>
                         <li class="hidden-xs">
-                            <form role="search" class="app-search">
-                                <input type="text" placeholder="Search..."
-                                       class="form-control">
-                                <a href=""><i class="fa fa-search"></i></a>
-                            </form>
+                            <div class="container" style="margin-top: 15px;">
+                                <a href="{{ url()->previous() }}" class="btn btn-primary btn-rounded w-md waves-effect waves-light m-b-5"><i class="fa fa-long-arrow-left"></i> <span>Retour</span></a>
+
+                            </div>
                         </li>
                     </ul>
 

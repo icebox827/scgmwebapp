@@ -59,7 +59,7 @@
                         <td>{{ $conducteur->sexe }}</td>
                         <td>{{ $conducteur->cin }}</td>
                         <td>{{ $conducteur->nif }}</td>
-                        <td>{{ $conducteur->permiscondure }}</td>
+                        <td>{{ $conducteur->permisconduire }}</td>
                         <td>{{ $conducteur->telephone }}</td>
                         <td>{{ $conducteur->proprietaire->nif  }}</td>
 
