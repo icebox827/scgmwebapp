@@ -17,11 +17,11 @@
                                     <img src="data:image/png;base64, {!! base64_encode(QrCode::format('png')->color(183,48,9)->size(320)->generate($vehicule->nummoteur)) !!} ">
                                     {{--<img class="img-responsive" src="{!!$QrCode::format('png')->generate($vehicule->nummoteur)!!}"/>--}}
                                     <div class="text-left" style="margin-top: 10px;">
-                                        <button href="{{ route('qr.download') }}/{{ $vehicule->id }}" class="btn btn-ico waves-effect waves-light btn-info m-b-5">
+                                        <a href="{{ route('qr.download') }}/{{ $vehicule->id }}" class="btn btn-ico waves-effect waves-light btn-info m-b-5">
                                             <i class="fa fa-download">
                                                 <span>Telecharger</span>
                                             </i>
-                                        </button>
+                                        </a>
                                     </div>
                                 </div>
 
