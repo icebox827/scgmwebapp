@@ -78,7 +78,7 @@
                         <a href="{{ url('/home') }}">Acceuil</a>
                     @else
                         <a href="{{ url('/login') }}">Se Connecter</a>
-                        <a href="{{ url('/register') }}">S'enregistrer</a>
+                        {{--<a href="{{ url('/register') }}">S'enregistrer</a>--}}
                     @endif
                 </div>
             @endif
@@ -92,9 +92,9 @@
                 </div>
 
                 <div class="links">
-                    <a href="www.pnh.ht">Site web de la PNH</a>
-                    <a href="www.anphaiti.org">Site web de l'ANP</a>
-                    <a href="www.dap.pnh.ht">Site web de la DAP</a>
+                    <a href="http://www.pnh.ht">Site web de la PNH</a>
+                    <a href="http://www.anphaiti.org">Site web de l'ANP</a>
+                    <a href="http://www.dap.pnh.ht">Site web de la DAP</a>
                 </div>
             </div>
         </div>
