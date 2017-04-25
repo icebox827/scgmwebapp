@@ -109,6 +109,10 @@ Route::get('/qrcode/{id?}',[
     'as' => 'qr.download'
 ]);
 
+Route::get('/vehicule-qr',[
+   'uses' => "VehiculeController@generate",
+    'as' => 'vehicule.generate'
+]);
 
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();

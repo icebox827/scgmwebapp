@@ -27,6 +27,9 @@ class Conducteur extends Model
     public function vehiculeId(){
         return $this->belongsTo(Vehicule::class);
     }
+    public function vehicule(){
+        return $this->belongsTo('App\Vehicule');
+    }
     public function references(){
         return $this->belongsToMany('App\Reference','conducteur_has_reference','conducteur_id','reference_id');
     }

@@ -51,7 +51,7 @@ class AndroidController extends Controller
 
         array_push($rep, $c);
 
-        $station  = Station::find($conducteur->station_id)->first();
+        $station  = Station::find($conducteur->station_id);
         $s = new \stdClass();
         $s->codestation = $station->codestation;
         $com = Commune::find($station->commune_id);

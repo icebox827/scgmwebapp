@@ -128,4 +128,7 @@ public function reference(){
         $conducteur->references()->attach($reference);
      }
 }
+
+
+
 }
