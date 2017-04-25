@@ -56,7 +56,7 @@ class AndroidController extends Controller
         $s->codestation = $station->codestation;
         $com = Commune::find($station->commune_id);
         $s->commune = $com->name;
-        $dept = Departement::find($com->id);
+        $dept = Departement::find($com->departement_id);
         $s->departement =$dept->name;
         $s->station = $station->station;
 
