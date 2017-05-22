@@ -95,6 +95,7 @@ class RegistraireController extends Controller
                 $conducteur = new Conducteur();
                 $conducteur->nif = $request->nif;
                 $conducteur->nom = $request->name;
+                $conducteur->prenom = $request->prenom;
                 $conducteur->datenaissance = new Carbon($request->birthdate);
                 $conducteur->lieunaissance = $request->lnaissance;
                 $conducteur->sexe = $request->sex;
