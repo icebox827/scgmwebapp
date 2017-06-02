@@ -40,6 +40,11 @@ Route::get('/android/{id?}',[
     'as' => 'android'
 ]);
 
+Route::get('/plaque/{id?}',[
+    'uses' =>'AndroidController@plaque',
+    'as' => 'plaque'
+]);
+
 Route::get('/addvehicule',[
     'uses' =>'AddvehiculeController@index',
     'as' => 'addvehicule'
