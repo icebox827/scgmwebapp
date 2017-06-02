@@ -68,6 +68,7 @@ class AndroidController extends Controller
     }
 
     public function plaque($id){
+        $id = preg_replace('/\s+/','',$id);
         $vehicule = Vehicule::where('immatriculation','LIKE',$id)->first();
 
         $rep = array();
